@@ -395,8 +395,63 @@
       user-select: none; pointer-events: none;
       transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
     }
+    .works-card { cursor: zoom-in; }
     .works-card:hover { transform: translateY(-4px); box-shadow: 0 18px 44px rgba(0,0,0,0.14); }
     .works-card:hover img { transform: scale(1.02); }
+
+    /* Lightbox */
+    .works-lightbox {
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(15,12,10,0.92);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .works-lightbox.open { opacity: 1; pointer-events: auto; }
+    .works-lightbox-img {
+      max-width: 92vw; max-height: 88vh; width: auto; height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+      transform: scale(0.96); transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+    }
+    .works-lightbox.open .works-lightbox-img { transform: scale(1); }
+    .works-lightbox-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s;
+    }
+    .works-lightbox-btn:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.4); }
+    .works-lightbox-btn svg { width: 22px; height: 22px; }
+    .works-lightbox-btn.prev { left: 24px; }
+    .works-lightbox-btn.next { right: 24px; }
+    .works-lightbox-btn[disabled] { opacity: 0.25; cursor: default; }
+    .works-lightbox-close {
+      position: absolute; top: 24px; right: 24px;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      color: #fff; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s; transform: none;
+    }
+    .works-lightbox-close:hover { background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.4); }
+    .works-lightbox-close svg { width: 18px; height: 18px; }
+    .works-lightbox-counter {
+      position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+      font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,0.6); font-variant-numeric: tabular-nums;
+    }
+    body.lightbox-open { overflow: hidden; }
+    @media (max-width: 768px) {
+      .works-lightbox-btn { width: 44px; height: 44px; }
+      .works-lightbox-btn.prev { left: 8px; }
+      .works-lightbox-btn.next { right: 8px; }
+      .works-lightbox-img { max-width: 96vw; max-height: 80vh; }
+    }
     .works-nav {
       position: absolute; top: calc(50% - 12px); transform: translateY(-50%);
       width: 52px; height: 52px; border-radius: 50%;
@@ -693,6 +748,21 @@
       <div class="works-counter"><span id="worksCurrent">01</span> / <span id="worksTotal">24</span></div>
     </div>
   </section>
+
+  <!-- WORKS LIGHTBOX -->
+  <div class="works-lightbox" id="worksLightbox" role="dialog" aria-modal="true" aria-label="Featured project viewer">
+    <button class="works-lightbox-close" id="worksLbClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+    </button>
+    <button class="works-lightbox-btn prev" id="worksLbPrev" aria-label="Previous image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+    </button>
+    <img class="works-lightbox-img" id="worksLbImg" alt="">
+    <button class="works-lightbox-btn next" id="worksLbNext" aria-label="Next image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+    </button>
+    <div class="works-lightbox-counter"><span id="worksLbCurrent">01</span> / <span id="worksLbTotal">24</span></div>
+  </div>
 
   <!-- CLIENT LOGOS -->
   <section class="clients">
@@ -1003,10 +1073,58 @@
         if (Math.abs(dx) > 4) moved = true;
         track.scrollLeft = startLeft - dx;
       });
-      track.addEventListener('click', e => { if (moved) e.preventDefault(); }, true);
+      track.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
 
       update();
       window.addEventListener('resize', update);
+
+      // Lightbox
+      const lb = document.getElementById('worksLightbox');
+      const lbImg = document.getElementById('worksLbImg');
+      const lbClose = document.getElementById('worksLbClose');
+      const lbPrev = document.getElementById('worksLbPrev');
+      const lbNext = document.getElementById('worksLbNext');
+      const lbCurrent = document.getElementById('worksLbCurrent');
+      const lbTotal = document.getElementById('worksLbTotal');
+      const imgs = Array.from(track.querySelectorAll('.works-card img'));
+      lbTotal.textContent = String(imgs.length).padStart(2, '0');
+      let lbIndex = 0;
+
+      function showAt(i) {
+        lbIndex = (i + imgs.length) % imgs.length;
+        const src = imgs[lbIndex].getAttribute('src');
+        lbImg.setAttribute('src', src);
+        lbImg.setAttribute('alt', imgs[lbIndex].getAttribute('alt') || '');
+        lbCurrent.textContent = String(lbIndex + 1).padStart(2, '0');
+        lbPrev.toggleAttribute('disabled', lbIndex === 0);
+        lbNext.toggleAttribute('disabled', lbIndex === imgs.length - 1);
+      }
+      function openLb(i) {
+        showAt(i);
+        lb.classList.add('open');
+        document.body.classList.add('lightbox-open');
+      }
+      function closeLb() {
+        lb.classList.remove('open');
+        document.body.classList.remove('lightbox-open');
+      }
+
+      cards.forEach((card, i) => {
+        card.addEventListener('click', e => {
+          if (moved) return;
+          openLb(i);
+        });
+      });
+      lbClose.addEventListener('click', closeLb);
+      lbPrev.addEventListener('click', () => { if (lbIndex > 0) showAt(lbIndex - 1); });
+      lbNext.addEventListener('click', () => { if (lbIndex < imgs.length - 1) showAt(lbIndex + 1); });
+      lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', e => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLb();
+        else if (e.key === 'ArrowLeft' && lbIndex > 0) showAt(lbIndex - 1);
+        else if (e.key === 'ArrowRight' && lbIndex < imgs.length - 1) showAt(lbIndex + 1);
+      });
     })();
 
     // Smooth scroll
