@@ -90,13 +90,13 @@
     }
     .hero-slide {
       position: absolute; inset: 0; opacity: 0;
-      animation: heroFade 42s infinite cubic-bezier(0.4,0,0.2,1);
+      animation: heroFade 49s infinite cubic-bezier(0.4,0,0.2,1);
       will-change: opacity;
     }
     .hero-slide img {
       width: 100%; height: 100%; object-fit: cover;
       transform-origin: center; will-change: transform;
-      animation-duration: 42s;
+      animation-duration: 49s;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
     }
@@ -106,50 +106,57 @@
     .hero-slide:nth-child(4) { animation-delay: 21s; }
     .hero-slide:nth-child(5) { animation-delay: 28s; }
     .hero-slide:nth-child(6) { animation-delay: 35s; }
-    .hero-slide:nth-child(1) img { animation-name: kbDriftUL; animation-delay: 0s; }
-    .hero-slide:nth-child(2) img { animation-name: kbDriftDR; animation-delay: 7s; }
-    .hero-slide:nth-child(3) img { animation-name: kbZoomIn;  animation-delay: 14s; }
-    .hero-slide:nth-child(4) img { animation-name: kbDriftLeft; animation-delay: 21s; }
-    .hero-slide:nth-child(5) img { animation-name: kbDriftDL; animation-delay: 28s; }
-    .hero-slide:nth-child(6) img { animation-name: kbZoomOut; animation-delay: 35s; }
+    .hero-slide:nth-child(7) { animation-delay: 42s; }
+    .hero-slide:nth-child(1) img { animation-name: kbDriftUL;    animation-delay: 0s;  }
+    .hero-slide:nth-child(2) img { animation-name: kbDriftDR;    animation-delay: 7s;  }
+    .hero-slide:nth-child(3) img { animation-name: kbZoomIn;     animation-delay: 14s; }
+    .hero-slide:nth-child(4) img { animation-name: kbDriftLeft;  animation-delay: 21s; }
+    .hero-slide:nth-child(5) img { animation-name: kbDriftRight; animation-delay: 28s; }
+    .hero-slide:nth-child(6) img { animation-name: kbDriftDL;    animation-delay: 35s; }
+    .hero-slide:nth-child(7) img { animation-name: kbZoomOut;    animation-delay: 42s; }
 
     @keyframes heroFade {
       0%   { opacity: 0; }
-      2.5% { opacity: 1; }
-      17%  { opacity: 1; }
-      19%  { opacity: 0; }
+      2%   { opacity: 1; }
+      14%  { opacity: 1; }
+      16%  { opacity: 0; }
       100% { opacity: 0; }
     }
-    /* Each pan animation runs full 42s but the visible window (0-19%, ~8s) is what matters.
-       After 19% the slide is invisible while the transform completes/holds. */
+    /* Each pan animation runs full 49s but the visible window (0-16%, ~8s) is what matters.
+       After 16% the slide is invisible while the transform completes/holds. */
     @keyframes kbDriftUL {
       0%   { transform: scale(1.18) translate(2%, 1.5%); }
-      19%  { transform: scale(1.30) translate(-3%, -2%); }
+      16%  { transform: scale(1.30) translate(-3%, -2%); }
       100% { transform: scale(1.30) translate(-3%, -2%); }
     }
     @keyframes kbDriftDR {
       0%   { transform: scale(1.20) translate(-2%, -2%); }
-      19%  { transform: scale(1.30) translate(3%, 2%); }
+      16%  { transform: scale(1.30) translate(3%, 2%); }
       100% { transform: scale(1.30) translate(3%, 2%); }
     }
     @keyframes kbZoomIn {
       0%   { transform: scale(1.22) translate(4%, 0); }
-      19%  { transform: scale(1.26) translate(-4%, -0.5%); }
+      16%  { transform: scale(1.26) translate(-4%, -0.5%); }
       100% { transform: scale(1.26) translate(-4%, -0.5%); }
     }
     @keyframes kbDriftLeft {
       0%   { transform: scale(1.22) translate(3%, 0); }
-      19%  { transform: scale(1.28) translate(-3%, 0); }
+      16%  { transform: scale(1.28) translate(-3%, 0); }
       100% { transform: scale(1.28) translate(-3%, 0); }
+    }
+    @keyframes kbDriftRight {
+      0%   { transform: scale(1.22) translate(-3%, 0.5%); }
+      16%  { transform: scale(1.28) translate(3%, -0.5%); }
+      100% { transform: scale(1.28) translate(3%, -0.5%); }
     }
     @keyframes kbDriftDL {
       0%   { transform: scale(1.30) translate(-2%, 2%); }
-      19%  { transform: scale(1.18) translate(2%, -1%); }
+      16%  { transform: scale(1.18) translate(2%, -1%); }
       100% { transform: scale(1.18) translate(2%, -1%); }
     }
     @keyframes kbZoomOut {
       0%   { transform: scale(1.32) translate(0, 0); }
-      19%  { transform: scale(1.18) translate(0, 1%); }
+      16%  { transform: scale(1.18) translate(0, 1%); }
       100% { transform: scale(1.18) translate(0, 1%); }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -624,9 +631,10 @@
   <section class="hero" id="hero">
     <div class="hero-slideshow" aria-hidden="true">
       <div class="hero-slide"><img src="assets/images/featured_brands/Amiri/Amiri_soho_1.jpeg" alt=""></div>
-      <div class="hero-slide"><img src="assets/images/featured_brands/Saks_fifth_avenue/Saks_Chicago_1.jpeg" alt=""></div>
-      <div class="hero-slide"><img src="assets/images/featured_brands/Nike/Nike_Bench_Omega.jpg" alt=""></div>
+      <div class="hero-slide"><img src="assets/NN_new_images/Saks%20Beverly%20Hills%202024%20(7).png" alt=""></div>
+      <div class="hero-slide"><img src="assets/NN_new_images/Bavette_s_Steakhouse___Bar___Bar_1.jpg" alt=""></div>
       <div class="hero-slide"><img src="assets/images/featured_brands/RuPaul/RuPaul_Closet_1.webp" alt=""></div>
+      <div class="hero-slide"><img src="assets/NN_new_images/Marzul%20Interior%203_enhancedImage.png" alt=""></div>
       <div class="hero-slide"><img src="assets/images/featured_brands/Cult_gaia/cult_gaia_1.jpg" alt=""></div>
       <div class="hero-slide"><img src="assets/images/featured_brands/Equinox/Equinox_1.jpg" alt=""></div>
     </div>
@@ -676,6 +684,51 @@
     </div>
   </section>
 
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header anim anim-up">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">From Raw Metal to <span>Remarkable</span></h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card anim anim-up">
+          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+          <h3>Retail Fixtures</h3>
+          <p>Custom displays, shop-in-shop environments, and full store fixture programs built to your exact brand specifications.</p>
+        </div>
+        <div class="service-card anim anim-up">
+          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+          <h3>Vertical Manufacturing</h3>
+          <p>Metal, millwork, upholstery, lighting, and glazing produced in-house under one roof for full quality control.</p>
+        </div>
+        <div class="service-card anim anim-up">
+          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+          <h3>Engineering & Design</h3>
+          <p>From technical shop drawings to 3D modeling and rendering, every detail is engineered before production begins.</p>
+        </div>
+        <div class="service-card anim anim-up">
+          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg></div>
+          <h3>Project Management</h3>
+          <p>A dedicated manager tracks your project from kickoff to completion, keeping timelines and quality on point.</p>
+        </div>
+        <div class="service-card anim anim-up">
+          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8l4 2.5v5L16 18"/></svg></div>
+          <h3>Logistics & Installation</h3>
+          <p>In-house packing, crating, and experienced installation crews deployed across North America.</p>
+        </div>
+        <div class="service-card anim anim-up">
+          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+          <h3>Restoration</h3>
+          <p>Repairs, refinishing, fixture refreshes, and component replacements to extend the life of your space.</p>
+        </div>
+      </div>
+      <div class="services-cta anim anim-up">
+        <a href="#" class="btn-outline">Explore Our Capabilities <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </section>
+
   <!-- PORTFOLIO -->
   <section class="portfolio" id="portfolio">
     <div class="portfolio-header anim anim-up">
@@ -693,35 +746,33 @@
       </div>
     </div>
 
-    <!-- Samsung - Split -->
+    <!-- Bavette's Steakhouse - Split -->
     <div class="pf-split anim anim-up">
-      <div class="pf-split-image"><img src="assets/images/featured_brands/Samsung/Samsung%20Bench_1.jpg" alt="Samsung" loading="lazy"></div>
+      <div class="pf-split-image"><img src="assets/NN_new_images/Bavette_s_Steakhouse___Bar___Bar_1.jpg" alt="Bavette's Steakhouse Bar, Las Vegas" loading="lazy"></div>
       <div class="pf-split-info">
-        <img src="assets/images/logos/samsung-8.svg" alt="Samsung" class="pf-split-logo">
-        <h3>Samsung</h3>
-        <div class="pf-location">Retail Experience</div>
-        <p>Custom retail display fixtures engineered with precision to showcase Samsung's latest technology in an immersive, brand-aligned environment.</p>
+        <h3>Bavette's Steakhouse</h3>
+        <div class="pf-location">Las Vegas, Nevada</div>
+        <p>A moody, jewel-toned hospitality build executed with the same precision as a flagship retail environment &mdash; custom millwork, bespoke bar fixtures, and tailored lighting that set the tone for a legendary dining experience.</p>
         <a href="#" class="btn-outline">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
       </div>
     </div>
 
-    <!-- Nike - Full Bleed -->
+    <!-- Marzul - Full Bleed -->
     <div class="pf-full anim anim-scale">
-      <img src="assets/images/featured_brands/Nike/Nike_Bench_Omega.jpg" alt="Nike" loading="lazy">
-      <img src="assets/images/logos/nike-icon.svg" alt="Nike" class="pf-full-logo">
+      <img src="assets/NN_new_images/Marzul%20Interior%203_enhancedImage.png" alt="Marzul Restaurant Interior, San Diego" loading="lazy">
       <div class="pf-full-overlay">
-        <h3>Nike</h3>
-        <div class="pf-location">Los Angeles</div>
+        <h3>Marzul</h3>
+        <div class="pf-location">San Diego, California</div>
       </div>
     </div>
 
     <!-- Saks Fifth Avenue - Split Reversed -->
     <div class="pf-split reversed anim anim-up">
-      <div class="pf-split-image"><img src="assets/images/featured_brands/Saks_fifth_avenue/Saks_Chicago_1.jpeg" alt="Saks Fifth Avenue" loading="lazy"></div>
+      <div class="pf-split-image"><img src="assets/NN_new_images/Saks%20Beverly%20Hills%202024%20(7).png" alt="Saks Fifth Avenue Beverly Hills" loading="lazy"></div>
       <div class="pf-split-info">
         <img src="assets/images/logos/Saks_Fifth_Avenue_Logo.svg" alt="Saks" class="pf-split-logo" style="height:44px;">
         <h3>Saks Fifth Avenue</h3>
-        <div class="pf-location">Chicago</div>
+        <div class="pf-location">Beverly Hills</div>
         <p>A premium retail environment combining millwork, metal, and lighting to deliver an elevated shopping experience for one of America's most iconic department stores.</p>
         <a href="#" class="btn-outline">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
       </div>
@@ -876,51 +927,6 @@
       <img src="assets/images/logos/Fabletics_Logo.svg" alt="Fabletics">
       <img src="assets/images/logos/Gaylord_Pacific_Logo.svg" alt="Gaylord Pacific">
       <img src="assets/images/logos/Shooting_Star_Jackson_Hole_Logo.png" alt="Shooting Star">
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-header anim anim-up">
-        <div class="section-label">What We Do</div>
-        <h2 class="section-title">From Raw Metal to <span>Remarkable</span></h2>
-      </div>
-      <div class="services-grid">
-        <div class="service-card anim anim-up">
-          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
-          <h3>Retail Fixtures</h3>
-          <p>Custom displays, shop-in-shop environments, and full store fixture programs built to your exact brand specifications.</p>
-        </div>
-        <div class="service-card anim anim-up">
-          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-          <h3>Vertical Manufacturing</h3>
-          <p>Metal, millwork, upholstery, lighting, and glazing produced in-house under one roof for full quality control.</p>
-        </div>
-        <div class="service-card anim anim-up">
-          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
-          <h3>Engineering & Design</h3>
-          <p>From technical shop drawings to 3D modeling and rendering, every detail is engineered before production begins.</p>
-        </div>
-        <div class="service-card anim anim-up">
-          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg></div>
-          <h3>Project Management</h3>
-          <p>A dedicated manager tracks your project from kickoff to completion, keeping timelines and quality on point.</p>
-        </div>
-        <div class="service-card anim anim-up">
-          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8l4 2.5v5L16 18"/></svg></div>
-          <h3>Logistics & Installation</h3>
-          <p>In-house packing, crating, and experienced installation crews deployed across North America.</p>
-        </div>
-        <div class="service-card anim anim-up">
-          <div class="service-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
-          <h3>Restoration</h3>
-          <p>Repairs, refinishing, fixture refreshes, and component replacements to extend the life of your space.</p>
-        </div>
-      </div>
-      <div class="services-cta anim anim-up">
-        <a href="#" class="btn-outline">Explore Our Capabilities <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
-      </div>
     </div>
   </section>
 
