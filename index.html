@@ -313,7 +313,128 @@
     .about-content .section-label { margin-bottom: 12px; }
     .about-content .section-title { margin-bottom: 24px; }
     .about-text { font-size: 15px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 16px; }
-    .about-text:last-of-type { margin-bottom: 32px; }
+    .about-text:last-of-type { margin-bottom: 24px; }
+    .about-tagline {
+      font-family: var(--font-display); font-size: 18px; font-style: italic;
+      color: var(--primary); line-height: 1.5;
+      padding-left: 18px; border-left: 2px solid var(--primary);
+      margin-bottom: 32px;
+    }
+    .about-tagline strong { font-weight: 700; font-style: normal; }
+
+    /* ===== MATERIALS & FINISHES (Amuneal-style horizontal accordion) ===== */
+    .finishes { padding: 110px 0; background: var(--dark); color: #fff; }
+    .finishes .section-header {
+      text-align: center; max-width: 720px; margin: 0 auto 56px; padding: 0 24px;
+    }
+    .finishes .section-header .section-title { color: #fff; margin-bottom: 14px; }
+    .finishes .section-header .section-label { color: var(--gold); }
+    .finishes-subtitle {
+      font-size: 15px; color: rgba(255,255,255,0.55);
+      max-width: 620px; margin: 0 auto; line-height: 1.75;
+    }
+    .finishes-grid {
+      display: flex;
+      gap: 12px;
+      --grid-w: min(calc(100vw - 48px), 1280px);
+      --unit-w: calc((var(--grid-w) - 24px) / 4);
+      width: var(--grid-w);
+      height: clamp(320px, 34vw, 460px);
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .finish-card {
+      display: flex; flex: 0 0 auto;
+      position: relative; cursor: pointer;
+      border-radius: 6px; overflow: hidden;
+    }
+    .finish-card-image {
+      width: var(--unit-w); flex-shrink: 0;
+      height: 100%; position: relative; overflow: hidden;
+    }
+    .finish-card-image img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s ease-out;
+    }
+    .finish-card-image::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.15) 50%, transparent 75%);
+      pointer-events: none;
+    }
+    .finish-card-label {
+      position: absolute; left: 24px; bottom: 22px; z-index: 2;
+      font-family: var(--font-display);
+      font-size: clamp(15px, 1.5vw, 21px);
+      font-weight: 700; color: #fff;
+      text-transform: uppercase; letter-spacing: 2px;
+      white-space: nowrap;
+      transition: opacity 0.5s;
+    }
+    .finish-card-info {
+      width: 0; flex-shrink: 0;
+      height: 100%;
+      background: var(--cream); color: var(--text);
+      overflow: hidden;
+      display: flex; flex-direction: column; justify-content: center;
+      transition: width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    .finish-card-info-inner {
+      padding: 36px 32px;
+      width: var(--unit-w);
+      opacity: 0; transform: translateX(12px);
+      transition: opacity 0.25s 0.12s ease, transform 0.3s 0.12s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    .finish-card-info h3 {
+      font-family: var(--font-display); font-size: clamp(18px, 1.8vw, 24px);
+      font-weight: 700; color: var(--text);
+      margin-bottom: 14px; line-height: 1.2;
+    }
+    .finish-card-info p {
+      font-size: 13.5px; line-height: 1.7;
+      color: var(--text-secondary); margin-bottom: 20px;
+    }
+    .finish-card-link {
+      align-self: flex-start;
+      font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--primary); font-weight: 400;
+      padding-bottom: 4px; border-bottom: 1px solid var(--primary);
+      transition: color 0.3s, border-color 0.3s, gap 0.3s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .finish-card-link:hover { color: var(--primary-hover); border-color: var(--primary-hover); gap: 12px; }
+    .finish-card-link svg { width: 12px; height: 12px; }
+
+    /* Active state — image stays fixed width; description slides in beside it */
+    .finish-card.is-active .finish-card-info { width: var(--unit-w); }
+    .finish-card.is-active .finish-card-info-inner { opacity: 1; transform: translateX(0); }
+    .finish-card.is-active .finish-card-image img { transform: scale(1.04); }
+    .finish-card.is-active .finish-card-label { opacity: 0.65; }
+
+    @media (max-width: 768px) {
+      .finishes { padding: 72px 0; }
+      .finishes-grid {
+        flex-direction: column; gap: 14px;
+        height: auto; padding: 0 16px;
+      }
+      .finish-card,
+      .finish-card.is-active {
+        flex: 0 0 auto; flex-direction: column; height: auto;
+      }
+      .finish-card-image,
+      .finish-card.is-active .finish-card-image {
+        flex: 0 0 auto; width: 100%; height: 240px;
+      }
+      .finish-card-info,
+      .finish-card.is-active .finish-card-info {
+        flex: 0 0 auto; width: 100%;
+      }
+      .finish-card-info-inner {
+        opacity: 1; transform: none; width: 100%;
+        padding: 24px 24px; transition: none;
+      }
+      .finish-card.is-active .finish-card-image img { transform: none; }
+      .finish-card-label { left: 20px; bottom: 18px; }
+    }
 
     /* ===== SERVICES ===== */
     .services { padding: 100px 0; background: var(--cream); }
@@ -674,12 +795,14 @@
       <div class="about-content anim anim-left">
         <div class="section-label">About Us</div>
         <h2 class="section-title">Built on Craft. Driven by <span>Innovation.</span></h2>
-        <p class="about-text">We are a full-service design and manufacturing partner specializing in high-end retail environments &mdash; helping the world's leading brands bring their vision to life through craftsmanship, precision, and engineering expertise.</p>
-        <p class="about-text">Founded in 1999 by brothers Luis and Francis in a 1,500 sq ft Los Angeles workshop, Niconat was built on a simple but powerful idea &mdash; that great manufacturing is about more than producing fixtures. It's about understanding a brand's vision and having the skill, technology, and care to execute it flawlessly.</p>
+        <p class="about-text">Founded in 1999 in Los Angeles, Niconat is a domestic manufacturer with over 26 years of experience.</p>
+        <p class="about-text">Built by three brothers with backgrounds in manufacturing, business, and design, the company combines technical expertise with a strong creative perspective.</p>
+        <p class="about-text">Today, Niconat operates at the intersection of design, engineering, and fabrication &mdash; delivering high-quality, custom solutions for retail, hospitality, and high-end residential environments. End-to-end execution from concept to installation.</p>
+        <p class="about-tagline">Different backgrounds, one mindset: <strong>build, create, and innovate.</strong></p>
         <a href="#" class="btn-primary">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
       </div>
       <div class="about-image anim anim-right">
-        <img src="assets/images/about-image.png" alt="NicoNat Facility">
+        <img src="assets/images/NicoNat_About_Us_Image.png" alt="NicoNat Facility">
       </div>
     </div>
   </section>
@@ -726,6 +849,69 @@
       <div class="services-cta anim anim-up">
         <a href="#" class="btn-outline">Explore Our Capabilities <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
       </div>
+    </div>
+  </section>
+
+  <!-- MATERIALS & FINISHES -->
+  <section class="finishes" id="finishes">
+    <div class="section-header anim anim-up">
+      <div class="section-label">Materials &amp; Finishes</div>
+      <h2 class="section-title">Crafted in the <span>Details</span></h2>
+      <p class="finishes-subtitle">From the earliest design conversations, we work with our clients to understand the role finish, texture, and material play in their vision &mdash; producing a full range of metalwork, millwork, and custom surfaces in&#8209;house with a hands-on sensibility.</p>
+    </div>
+    <div class="finishes-grid">
+
+      <article class="finish-card is-active anim anim-up">
+        <div class="finish-card-image">
+          <img src="assets/images/featured_brands/Samsung/Samsung%20Bench_2.jpg" alt="Metal finishes detail" loading="lazy">
+          <div class="finish-card-label">Metal Finishes</div>
+        </div>
+        <div class="finish-card-info">
+          <div class="finish-card-info-inner">
+            <h3>Metal Finishes</h3>
+            <p>From mirror-polished brass and brushed stainless to hand-applied patinas and powder coats, our in-house metal shop produces a full spectrum of decorative metalwork &mdash; built to last and finished to spec.</p>
+            <a href="#contact" class="finish-card-link">
+              View Finishes
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="finish-card anim anim-up">
+        <div class="finish-card-image">
+          <img src="assets/images/featured_brands/Saks_fifth_avenue/Saks_Chikago_2.JPG" alt="Wood and millwork finishes" loading="lazy">
+          <div class="finish-card-label">Wood &amp; Millwork</div>
+        </div>
+        <div class="finish-card-info">
+          <div class="finish-card-info-inner">
+            <h3>Wood &amp; Millwork</h3>
+            <p>Hand-selected hardwoods, exotic veneers, custom stains, and high-gloss lacquers &mdash; milled, finished, and assembled under one roof for total quality control and a flawless final surface.</p>
+            <a href="#contact" class="finish-card-link">
+              View Finishes
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="finish-card anim anim-up">
+        <div class="finish-card-image">
+          <img src="assets/images/featured_brands/Nike/Nike_Bench_Black_Closeup.jpg" alt="Upholstery and custom surfaces" loading="lazy">
+          <div class="finish-card-label">Custom Surfaces</div>
+        </div>
+        <div class="finish-card-info">
+          <div class="finish-card-info-inner">
+            <h3>Upholstery &amp; Custom Surfaces</h3>
+            <p>Bespoke leather and fabric upholstery, specialty glazing, stone, integrated lighting, and one-off material treatments &mdash; every element detailed to match the design intent.</p>
+            <a href="#contact" class="finish-card-link">
+              View Finishes
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
     </div>
   </section>
 
@@ -1033,7 +1219,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>Copyright &copy; 2026 THE CLAY MEDIA. All rights reserved.</p>
+        <p>DESIGNED BY THE CLAY MEDIA &copy; 2026</p>
         <div class="footer-bottom-links">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms & Conditions</a>
@@ -1192,6 +1378,22 @@
         if (e.key === 'Escape') closeLb();
         else if (e.key === 'ArrowLeft' && lbIndex > 0) showAt(lbIndex - 1);
         else if (e.key === 'ArrowRight' && lbIndex < imgs.length - 1) showAt(lbIndex + 1);
+      });
+    })();
+
+    // Materials & Finishes — persistent active state (Amuneal-style)
+    // First card active by default; hovering another card switches active to it.
+    // Active card stays open until another card is hovered (no mouseleave reset).
+    (function() {
+      const cards = document.querySelectorAll('.finish-card');
+      if (!cards.length) return;
+      function activate(target) {
+        cards.forEach(c => c.classList.toggle('is-active', c === target));
+      }
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', () => activate(card));
+        card.addEventListener('click', () => activate(card));
+        card.addEventListener('focusin', () => activate(card));
       });
     })();
 
