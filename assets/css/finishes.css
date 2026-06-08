@@ -1,6 +1,6 @@
 /* ============================================================
-   NicoNat — Finishes pages stylesheet
-   Shared by metal-finishes.html, wood-finishes.html, custom-finishes.html
+   NicoNat — Finishes page stylesheet
+   Used by finishes.html (consolidated Materials & Finishes page).
    Design tokens mirror the homepage (index.html) so the look stays consistent.
    ============================================================ */
 
@@ -137,14 +137,16 @@ ul { list-style: none; }
 .fin-tab.is-current { background: var(--primary); color: #fff; }
 
 /* ===== SWATCH GRID ===== */
-.fin-swatches { padding: 80px 0; background: #fff; }
+.fin-swatches { padding: 80px 0; background: #fff; scroll-margin-top: 124px; }
+.fin-swatches.alt { background: var(--cream); border-top: 1px solid var(--beige); border-bottom: 1px solid var(--beige); }
 .fin-swatches-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
 .fin-swatches-head .section-title { font-size: clamp(28px, 3.4vw, 44px); margin-bottom: 14px; }
 .fin-swatches-head p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
 .swatch-grid {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 24px;
 }
-.swatch { display: flex; flex-direction: column; }
+.swatch { display: flex; flex-direction: column; cursor: pointer; outline: none; }
+.swatch:focus-visible .swatch-img { box-shadow: 0 0 0 3px var(--primary); }
 .swatch-img {
   aspect-ratio: 1 / 1; border-radius: 8px; overflow: hidden;
   border: 1px solid var(--beige);
@@ -209,6 +211,157 @@ ul { list-style: none; }
 .sample-confirm svg { width: 48px; height: 48px; color: var(--primary); margin: 0 auto 18px; }
 .sample-confirm h3 { font-family: var(--font-display); font-size: 26px; font-weight: 700; margin-bottom: 10px; }
 .sample-confirm p { font-size: 14.5px; color: var(--text-secondary); line-height: 1.7; }
+
+/* ===== SWATCH MODAL ===== */
+.swatch-modal {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(15,12,10,0.88);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.swatch-modal.open { opacity: 1; pointer-events: auto; }
+.swatch-modal-content {
+  position: relative; display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(260px, 0.6fr);
+  gap: 0;
+  max-width: 1000px; width: 100%;
+  max-height: 88vh;
+  background: #fff; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  transform: translateY(12px) scale(0.98);
+  transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.swatch-modal.open .swatch-modal-content { transform: translateY(0) scale(1); }
+.swatch-modal-img {
+  width: 100%; height: 100%; min-height: 320px;
+  object-fit: cover; background: var(--cream);
+}
+.swatch-modal-meta {
+  padding: 48px 44px;
+  display: flex; flex-direction: column; justify-content: center;
+  background: #fff;
+}
+.swatch-modal-cat {
+  font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--primary); margin-bottom: 12px;
+}
+.swatch-modal-name {
+  font-family: var(--font-display); font-size: clamp(26px, 3.2vw, 38px);
+  font-weight: 700; color: var(--text); line-height: 1.15;
+  margin-bottom: 6px;
+}
+.swatch-modal-code {
+  font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 28px;
+  font-variant-numeric: tabular-nums;
+}
+.swatch-modal-meta .btn-primary { align-self: flex-start; }
+.swatch-modal-close {
+  position: absolute; top: 14px; right: 14px;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(255,255,255,0.92); border: 1px solid var(--beige);
+  color: var(--text); cursor: pointer; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+.swatch-modal-close:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+.swatch-modal-close svg { width: 16px; height: 16px; }
+body.modal-open { overflow: hidden; }
+@media (max-width: 768px) {
+  .swatch-modal-content {
+    grid-template-columns: 1fr; max-height: 92vh; overflow-y: auto;
+  }
+  .swatch-modal-img { min-height: 260px; max-height: 50vh; }
+  .swatch-modal-meta { padding: 32px 28px; }
+}
+
+/* ===== MULTI-SELECT FINISHES WIDGET ===== */
+.finish-select { position: relative; }
+.finish-select-input {
+  display: flex; align-items: stretch; gap: 0;
+  background: #fff; border: 1px solid var(--beige); border-radius: 8px;
+  overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s;
+}
+.finish-select-input:focus-within { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(171,139,110,0.12); }
+.finish-chips {
+  flex: 1; display: flex; flex-wrap: wrap; gap: 6px;
+  padding: 8px 12px; min-height: 48px; align-items: center;
+}
+.finish-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--cream); color: var(--text);
+  border: 1px solid var(--beige); border-radius: 30px;
+  padding: 4px 4px 4px 12px;
+  font-size: 12.5px; letter-spacing: 0.3px; max-width: 100%;
+}
+.finish-chip span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 220px; }
+.finish-chip button {
+  background: transparent; border: 0; cursor: pointer;
+  width: 22px; height: 22px; border-radius: 50%;
+  color: var(--text-muted); font-size: 16px; line-height: 1;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+.finish-chip button:hover { background: var(--primary); color: #fff; }
+.finish-other {
+  flex: 1; min-width: 200px;
+  border: 0 !important; background: transparent !important; padding: 4px 6px !important;
+  font-family: var(--font-body); font-size: 14px; color: var(--text);
+  outline: none; box-shadow: none !important;
+}
+.finish-other::placeholder { color: var(--text-muted); font-size: 13px; }
+.finish-toggle {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--cream); border: 0; border-left: 1px solid var(--beige);
+  color: var(--text-secondary);
+  padding: 0 18px; font-size: 11.5px; letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer; transition: background 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+.finish-toggle:hover { background: var(--primary); color: #fff; }
+.finish-toggle svg { width: 14px; height: 14px; transition: transform 0.3s; }
+.finish-toggle.is-open svg { transform: rotate(180deg); }
+.finish-toggle.is-open { background: var(--primary); color: #fff; }
+.finish-panel {
+  position: absolute; left: 0; right: 0; top: calc(100% + 6px);
+  max-height: 360px; overflow-y: auto;
+  background: #fff; border: 1px solid var(--beige); border-radius: 10px;
+  box-shadow: 0 16px 36px rgba(0,0,0,0.10);
+  padding: 14px 18px; z-index: 50;
+}
+.finish-group { margin-bottom: 14px; }
+.finish-group:last-child { margin-bottom: 0; }
+.finish-group h4 {
+  font-size: 10.5px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--primary); margin-bottom: 8px;
+  padding-bottom: 6px; border-bottom: 1px solid var(--beige);
+}
+.finish-opt {
+  display: flex; align-items: center; gap: 12px;
+  padding: 7px 10px; font-size: 13.5px; cursor: pointer;
+  border-radius: 6px; transition: background 0.2s;
+}
+.finish-opt:hover { background: var(--cream); }
+.finish-opt input[type="checkbox"] {
+  /* Override the .sample-field input { width:100% } inherited rule */
+  width: 16px !important; height: 16px !important;
+  flex: 0 0 16px; padding: 0 !important; margin: 0;
+  min-height: 0; background: #fff;
+  accent-color: var(--primary); cursor: pointer;
+}
+.finish-opt-name { flex: 1; color: var(--text); }
+.finish-opt-code {
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--text-muted); font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 600px) {
+  .finish-select-input { flex-direction: column; }
+  .finish-toggle { border-left: 0; border-top: 1px solid var(--beige); padding: 12px; justify-content: center; }
+}
 
 /* ===== FOOTER ===== */
 .footer { padding: 64px 0 32px; background: var(--cream); border-top: 1px solid var(--beige); }
