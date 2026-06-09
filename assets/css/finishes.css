@@ -255,10 +255,15 @@ ul { list-style: none; }
 }
 .swatch-modal-code {
   font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--text-muted); margin-bottom: 28px;
+  color: var(--text-muted); margin-bottom: 22px;
   font-variant-numeric: tabular-nums;
 }
-.swatch-modal-meta .btn-primary { align-self: flex-start; }
+.swatch-modal-desc {
+  font-size: 14px; line-height: 1.7; color: var(--text-secondary);
+  margin: 0 0 28px 0;
+}
+.swatch-modal-meta { overflow-y: auto; }
+.swatch-modal-meta .btn-primary { align-self: flex-start; flex-shrink: 0; }
 .swatch-modal-close {
   position: absolute; top: 14px; right: 14px;
   width: 38px; height: 38px; border-radius: 50%;
