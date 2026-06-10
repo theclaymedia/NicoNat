@@ -368,6 +368,24 @@ body.modal-open { overflow: hidden; }
   .finish-toggle { border-left: 0; border-top: 1px solid var(--beige); padding: 12px; justify-content: center; }
 }
 
+/* ===== SAMPLE FORM EXTRAS (application radios, 3-sample limit) ===== */
+.label-hint {
+  color: var(--text-muted); text-transform: none; letter-spacing: 0.5px;
+}
+.sample-radios { display: flex; flex-wrap: wrap; gap: 12px 24px; padding: 4px 2px; }
+.radio-opt {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; color: var(--text); cursor: pointer;
+}
+.radio-opt input { accent-color: var(--primary); width: 16px; height: 16px; cursor: pointer; }
+.finish-select-input.limit-flash {
+  border-color: #b3261e;
+  box-shadow: 0 0 0 3px rgba(179, 38, 30, 0.15);
+}
+.finish-panel.at-limit .finish-opt:not(:has(input:checked)) {
+  opacity: 0.4; pointer-events: none;
+}
+
 /* ===== FOOTER ===== */
 .footer { padding: 64px 0 32px; background: var(--cream); border-top: 1px solid var(--beige); }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
