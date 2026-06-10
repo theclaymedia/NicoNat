@@ -416,7 +416,25 @@ body.modal-open { overflow: hidden; }
     box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   }
   .fin-hero { padding: 130px 0 56px; }
-  .fin-tabs { top: 60px; }
+  .fin-tabs {
+    top: 60px;
+    flex-wrap: nowrap; gap: 4px;
+    padding: 10px 8px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .fin-tabs::-webkit-scrollbar { display: none; }
+  .fin-tab {
+    font-size: 10px; letter-spacing: 0.5px;
+    padding: 7px 9px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  /* auto-margins center the pills when they fit, and allow scroll when they don't
+     (plain justify-content:center clips the left edge irrecoverably on overflow) */
+  .fin-tab:first-child { margin-left: auto; }
+  .fin-tab:last-child { margin-right: auto; }
   .swatch-grid { grid-template-columns: repeat(2, 1fr); gap: 22px 16px; }
   .sample-form { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
