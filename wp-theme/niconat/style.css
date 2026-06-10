@@ -1,0 +1,20 @@
+/*
+Theme Name: NicoNat
+Theme URI: https://niconat.co
+Author: The Clay Media
+Description: Custom theme for NicoNat — high-end retail environments. Pixel-faithful port of the approved HTML mockup: homepage (hero slideshow, about, services, finishes accordion, portfolio, works carousel, contact) plus the Materials & Finishes catalog with swatch modals and sample-request flow.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: Proprietary
+Text Domain: niconat
+*/
+
+/*
+  All styles are enqueued from assets/css/ (see functions.php):
+    - main.css      → front page (extracted verbatim from the mockup's index.html)
+    - finishes.css  → finishes page + generic inner pages
+    - wp-extras.css → WordPress-specific tweaks (admin bar offset, Contact Form 7)
+  This file intentionally contains only the theme header.
+*/

@@ -1,0 +1,28 @@
+/* WordPress-specific adjustments — admin bar offset + Contact Form 7 styling
+   so CF7 markup inherits the exact mockup form layout. */
+
+body.admin-bar .header { top: 32px; }
+@media screen and (max-width: 782px) {
+  body.admin-bar .header { top: 46px; }
+}
+
+/* Contact form (homepage, dark section) — CF7 form mimics the mockup flex column */
+.contact-form form.wpcf7-form { display: flex; flex-direction: column; gap: 20px; }
+
+/* Sample request form (finishes page) — CF7 form mimics the mockup grid */
+.sample-form-wrap form.wpcf7-form { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+@media (max-width: 768px) {
+  .sample-form-wrap form.wpcf7-form { grid-template-columns: 1fr; }
+}
+.sample-form-wrap .full,
+.sample-form-wrap .sample-submit { grid-column: 1 / -1; }
+.sample-form-wrap .sample-submit { display: flex; justify-content: center; margin-top: 6px; }
+
+/* CF7 chrome kept on-brand */
+.wpcf7-spinner { margin: 0 12px; }
+.wpcf7-not-valid-tip { font-size: 12px; color: #b3261e; margin-top: 6px; }
+.wpcf7 form .wpcf7-response-output {
+  margin: 16px 0 0; padding: 12px 16px;
+  border: 1px solid var(--beige); border-radius: 8px; font-size: 14px;
+}
+.contact-form .wpcf7-response-output { color: #fff; border-color: rgba(255,255,255,0.25); }

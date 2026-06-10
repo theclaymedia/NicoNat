@@ -1,0 +1,156 @@
+/* NicoNat theme — finishes page scripts (from mockup; adapted for CF7) */
+// Header scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 30);
+});
+// Mobile nav toggle
+document.getElementById('mobileToggle').addEventListener('click', () => {
+  document.getElementById('nav').classList.toggle('active');
+});
+// Scroll-reveal animations
+function checkAnim() {
+  const t = window.innerHeight * 0.92;
+  document.querySelectorAll('.anim:not(.visible)').forEach(el => {
+    if (el.getBoundingClientRect().top < t) el.classList.add('visible');
+  });
+}
+window.addEventListener('scroll', checkAnim, { passive: true });
+window.addEventListener('load', checkAnim);
+setTimeout(checkAnim, 200);
+
+// === Multi-select finishes widget ===
+(function() {
+  const chipsArea = document.getElementById('finishChips');
+  const otherInput = document.getElementById('finishOther');
+  const toggleBtn = document.getElementById('finishToggle');
+  const panel = document.getElementById('finishPanel');
+  const hiddenField = document.querySelector('input[name="finishes"]') || document.getElementById('finishHidden');
+  const selected = new Set();
+
+  function syncHidden() { if (hiddenField) hiddenField.value = Array.from(selected).join(', '); }
+  function chip(name) {
+    const el = document.createElement('span');
+    el.className = 'finish-chip';
+    el.dataset.value = name;
+    el.innerHTML = '<span></span><button type="button" aria-label="Remove">\u00d7</button>';
+    el.firstChild.textContent = name;
+    el.querySelector('button').addEventListener('click', () => {
+      selected.delete(name);
+      const cb = panel.querySelector('input[value="'+CSS.escape(name)+'"]');
+      if (cb) cb.checked = false;
+      el.remove(); syncHidden();
+    });
+    otherInput.insertAdjacentElement('beforebegin', el);
+  }
+  function addFinish(name) {
+    if (!name || selected.has(name)) return;
+    selected.add(name); chip(name);
+    const cb = panel.querySelector('input[value="'+CSS.escape(name)+'"]');
+    if (cb) cb.checked = true;
+    syncHidden();
+  }
+  window.__addFinish = addFinish;
+
+  toggleBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    const open = panel.hidden;
+    panel.hidden = !open;
+    toggleBtn.setAttribute('aria-expanded', String(open));
+    toggleBtn.classList.toggle('is-open', open);
+  });
+  document.addEventListener('click', e => {
+    if (panel.hidden) return;
+    if (!panel.contains(e.target) && e.target !== toggleBtn && !toggleBtn.contains(e.target)) {
+      panel.hidden = true; toggleBtn.classList.remove('is-open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+  panel.addEventListener('change', e => {
+    if (e.target.type !== 'checkbox') return;
+    if (e.target.checked) addFinish(e.target.value);
+    else {
+      selected.delete(e.target.value);
+      const c = chipsArea.querySelector('.finish-chip[data-value="'+CSS.escape(e.target.value)+'"]');
+      if (c) c.remove();
+      syncHidden();
+    }
+  });
+  otherInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ',') {
+      e.preventDefault();
+      const v = otherInput.value.trim().replace(/,$/, '');
+      if (v) addFinish(v);
+      otherInput.value = '';
+    }
+  });
+  otherInput.addEventListener('blur', () => {
+    const v = otherInput.value.trim();
+    if (v) { addFinish(v); otherInput.value = ''; }
+  });
+})();
+
+// === Swatch modal ===
+(function() {
+  const modal = document.getElementById('swatchModal');
+  const img = document.getElementById('modalImg');
+  const name = document.getElementById('modalName');
+  const code = document.getElementById('modalCode');
+  const cat = document.getElementById('modalCat');
+  const desc = document.getElementById('modalDesc');
+  const req = document.getElementById('modalRequest');
+  const close = document.getElementById('modalClose');
+  let current = null;
+
+  function open(s) {
+    current = {
+      name: s.dataset.name,
+      code: s.dataset.code,
+      cat: s.dataset.category,
+      desc: s.dataset.desc || '',
+      img: s.dataset.img,
+    };
+    img.src = current.img; img.alt = current.name;
+    name.textContent = current.name;
+    code.textContent = current.code;
+    cat.textContent = current.cat;
+    desc.textContent = current.desc;
+    desc.style.display = current.desc ? '' : 'none';
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+  }
+  function dismiss() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.classList.remove('modal-open');
+    current = null;
+  }
+  document.querySelectorAll('.swatch').forEach(s => {
+    s.addEventListener('click', () => open(s));
+    s.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(s); }
+    });
+  });
+  close.addEventListener('click', dismiss);
+  modal.addEventListener('click', e => { if (e.target === modal) dismiss(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) dismiss();
+  });
+  req.addEventListener('click', () => {
+    if (current && window.__addFinish) window.__addFinish(current.name + ' (' + current.code + ')');
+    dismiss();
+    document.getElementById('request-samples').scrollIntoView({ behavior: 'smooth' });
+  });
+})();
+
+// === Sample form submit (mockup) ===
+const sampleFormEl = document.getElementById('sampleForm');
+if (sampleFormEl) sampleFormEl.addEventListener('submit', e => {
+  e.preventDefault();
+  const form = e.currentTarget;
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+  form.style.display = 'none';
+  const c = document.getElementById('sampleConfirm');
+  c.classList.add('show');
+  c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
