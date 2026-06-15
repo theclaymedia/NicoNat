@@ -29,7 +29,7 @@ if ( NN_CF7_SAMPLES && function_exists( 'wpcf7' ) ) : ?>
         </div>
 
         <div class="sample-field full">
-          <label>Finishes of Interest</label>
+          <label>Finishes of Interest <span class="label-hint">&mdash; up to 3 per order</span></label>
           <div class="finish-select" id="finishSelect">
             <div class="finish-select-input">
               <div class="finish-chips" id="finishChips">
@@ -55,8 +55,8 @@ if ( NN_CF7_SAMPLES && function_exists( 'wpcf7' ) ) : ?>
           <label class="finish-opt"><input type="checkbox" value="Champagne (NN-M10)"> <span class="finish-opt-name">Champagne</span> <span class="finish-opt-code">NN-M10</span></label>
           <label class="finish-opt"><input type="checkbox" value="Satin Nickel (NN-M11)"> <span class="finish-opt-name">Satin Nickel</span> <span class="finish-opt-code">NN-M11</span></label>
           <label class="finish-opt"><input type="checkbox" value="Polished Nickel (NN-M12)"> <span class="finish-opt-name">Polished Nickel</span> <span class="finish-opt-code">NN-M12</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Brushed Bronze (NN-M13)"> <span class="finish-opt-name">Brushed Bronze</span> <span class="finish-opt-code">NN-M13</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Polished Copper (NN-M14)"> <span class="finish-opt-name">Polished Copper</span> <span class="finish-opt-code">NN-M14</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Polished Copper (NN-M13)"> <span class="finish-opt-name">Polished Copper</span> <span class="finish-opt-code">NN-M13</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Powder Coating (NN-M14)"> <span class="finish-opt-name">Powder Coating</span> <span class="finish-opt-code">NN-M14</span></label>
         </div>
         <div class="finish-group">
           <h4>Wood Finishes</h4>
@@ -75,21 +75,27 @@ if ( NN_CF7_SAMPLES && function_exists( 'wpcf7' ) ) : ?>
         </div>
         <div class="finish-group">
           <h4>Custom Finishes</h4>
-          <label class="finish-opt"><input type="checkbox" value="Marble (NN-C01)"> <span class="finish-opt-name">Marble</span> <span class="finish-opt-code">NN-C01</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Stone (NN-C02)"> <span class="finish-opt-name">Stone</span> <span class="finish-opt-code">NN-C02</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Glass (NN-C03)"> <span class="finish-opt-name">Glass</span> <span class="finish-opt-code">NN-C03</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Mirrors (NN-C04)"> <span class="finish-opt-name">Mirrors</span> <span class="finish-opt-code">NN-C04</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Full Grain Leather (NN-C05)"> <span class="finish-opt-name">Full Grain Leather</span> <span class="finish-opt-code">NN-C05</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Upholstery (NN-C06)"> <span class="finish-opt-name">Upholstery</span> <span class="finish-opt-code">NN-C06</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Powder Coating (NN-C07)"> <span class="finish-opt-name">Powder Coating</span> <span class="finish-opt-code">NN-C07</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Integrated Lighting (NN-C08)"> <span class="finish-opt-name">Integrated Lighting</span> <span class="finish-opt-code">NN-C08</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Acrylic (NN-C09)"> <span class="finish-opt-name">Acrylic</span> <span class="finish-opt-code">NN-C09</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Stone (NN-C01)"> <span class="finish-opt-name">Stone</span> <span class="finish-opt-code">NN-C01</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Glass (NN-C02)"> <span class="finish-opt-name">Glass</span> <span class="finish-opt-code">NN-C02</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Mirrors (NN-C03)"> <span class="finish-opt-name">Mirrors</span> <span class="finish-opt-code">NN-C03</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Full Grain Leather (NN-C04)"> <span class="finish-opt-name">Full Grain Leather</span> <span class="finish-opt-code">NN-C04</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Upholstery (NN-C05)"> <span class="finish-opt-name">Upholstery</span> <span class="finish-opt-code">NN-C05</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Integrated Lighting (NN-C06)"> <span class="finish-opt-name">Integrated Lighting</span> <span class="finish-opt-code">NN-C06</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Acrylic (NN-C07)"> <span class="finish-opt-name">Acrylic</span> <span class="finish-opt-code">NN-C07</span></label>
         </div>
             </div>
             <input type="hidden" id="finishHidden" name="finishes">
           </div>
         </div>
 
+        <div class="sample-field full">
+          <label>Application</label>
+          <div class="sample-radios">
+            <label class="radio-opt"><input type="radio" name="application" value="Indoor" checked> <span>Indoor</span></label>
+            <label class="radio-opt"><input type="radio" name="application" value="Outdoor"> <span>Outdoor</span></label>
+            <label class="radio-opt"><input type="radio" name="application" value="Indoor &amp; Outdoor"> <span>Indoor &amp; Outdoor</span></label>
+          </div>
+        </div>
         <div class="sample-field full">
           <label for="sf-address">Shipping Address</label>
           <input type="text" id="sf-address" name="address" placeholder="Street, City, State, ZIP">

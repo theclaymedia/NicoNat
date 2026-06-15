@@ -25,7 +25,7 @@ function nn_anchor( $hash ) {
   <!-- HEADER -->
   <header class="header" id="header">
     <div class="container">
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?php echo nn_asset( 'assets/images/niconat-logo.webp' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></a>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?php echo nn_asset( 'assets/images/niconat-logo-circle.png' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></a>
       <nav class="nav" id="nav">
         <a href="<?php echo nn_anchor( 'hero' ); ?>" class="nav-link">Home</a>
         <a href="<?php echo nn_anchor( 'portfolio' ); ?>" class="nav-link">Work</a>

@@ -154,7 +154,7 @@ get_header();
 
       <article class="finish-card anim anim-up">
         <div class="finish-card-image">
-          <img src="<?php echo nn_asset('assets/images/featured_brands/Nike/Nike_Bench_Black_Closeup.jpg'); ?>" alt="Upholstery and custom surfaces" loading="lazy">
+          <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg'); ?>" alt="Upholstery and custom surfaces" loading="lazy">
           <div class="finish-card-label">Custom Surfaces</div>
         </div>
         <div class="finish-card-info">
@@ -237,7 +237,7 @@ get_header();
       <div class="pf-split-info">
         <img src="<?php echo nn_asset('assets/images/logos/Equinox_Logo.svg'); ?>" alt="Equinox" class="pf-split-logo">
         <h3>Equinox</h3>
-        <div class="pf-location">Nationwide</div>
+        <div class="pf-location">Los Angeles</div>
         <p>High-performance fitness environments built to Equinox's exacting standards, blending premium materials with functional design across multiple locations.</p>
         <a href="#" class="btn-outline">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
       </div>
@@ -249,7 +249,7 @@ get_header();
       <div class="pf-split-info">
         <img src="<?php echo nn_asset('assets/images/logos/Cult_Gaia_Logo.svg'); ?>" alt="Cult Gaia" class="pf-split-logo">
         <h3>Cult Gaia</h3>
-        <div class="pf-location">Miami</div>
+        <div class="pf-location">Los Angeles</div>
         <p>A bespoke retail environment featuring custom displays and lighting solutions that bring the brand's artistic vision into a physical space.</p>
         <a href="#" class="btn-outline">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
       </div>
@@ -340,7 +340,7 @@ get_header();
   <section class="clients">
     <div class="clients-marquee">
       <img src="<?php echo nn_asset('assets/images/logos/samsung-8.svg'); ?>" alt="Samsung">
-      <img src="<?php echo nn_asset('assets/images/logos/nike-icon.svg'); ?>" alt="Nike">
+      <img src="<?php echo nn_asset('assets/images/niconat-logo-circle.png'); ?>" alt="NicoNat">
       <img src="<?php echo nn_asset('assets/images/logos/Sam%20Edelman%20Logo.svg'); ?>" alt="Sam Edelman">
       <img src="<?php echo nn_asset("assets/images/logos/RuPaul's_Drag_Race_Logo.svg"); ?>" alt="RuPaul">
       <img src="<?php echo nn_asset('assets/images/logos/Amiri_Logo.svg'); ?>" alt="Amiri">
@@ -356,7 +356,7 @@ get_header();
       <img src="<?php echo nn_asset('assets/images/logos/Shooting_Star_Jackson_Hole_Logo.png'); ?>" alt="Shooting Star">
       <!-- Duplicate for seamless loop -->
       <img src="<?php echo nn_asset('assets/images/logos/samsung-8.svg'); ?>" alt="Samsung">
-      <img src="<?php echo nn_asset('assets/images/logos/nike-icon.svg'); ?>" alt="Nike">
+      <img src="<?php echo nn_asset('assets/images/niconat-logo-circle.png'); ?>" alt="NicoNat">
       <img src="<?php echo nn_asset('assets/images/logos/Sam%20Edelman%20Logo.svg'); ?>" alt="Sam Edelman">
       <img src="<?php echo nn_asset("assets/images/logos/RuPaul's_Drag_Race_Logo.svg"); ?>" alt="RuPaul">
       <img src="<?php echo nn_asset('assets/images/logos/Amiri_Logo.svg'); ?>" alt="Amiri">
@@ -377,10 +377,9 @@ get_header();
   <section class="stats">
     <div class="container">
       <div class="stats-grid">
-        <div class="anim anim-up"><div class="stat-number"><span class="counter" data-target="1">0</span>M+</div><div class="stat-label">Square Feet Fabricated</div></div>
-        <div class="anim anim-up"><div class="stat-number"><span class="counter" data-target="500">0</span>+</div><div class="stat-label">Projects Completed</div></div>
-        <div class="anim anim-up"><div class="stat-number"><span class="counter" data-target="50">0</span>+</div><div class="stat-label">Brands Partnered</div></div>
-        <div class="anim anim-up"><div class="stat-number"><span class="counter" data-target="25">0</span>+</div><div class="stat-label">Years of Experience</div></div>
+        <div class="anim anim-up"><div class="stat-number"><span class="counter" data-target="7500">0</span></div><div class="stat-label">Projects</div></div>
+        <div class="anim anim-up"><div class="stat-number"><span class="counter" data-target="27">0</span></div><div class="stat-label">Years in Business</div></div>
+        <div class="anim anim-up"><div class="stat-number"><span class="counter" data-target="100">0</span></div><div class="stat-label">Brands We&rsquo;ve Worked With</div></div>
       </div>
     </div>
   </section>

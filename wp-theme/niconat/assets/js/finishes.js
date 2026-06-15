@@ -38,16 +38,27 @@ setTimeout(checkAnim, 200);
       selected.delete(name);
       const cb = panel.querySelector('input[value="'+CSS.escape(name)+'"]');
       if (cb) cb.checked = false;
-      el.remove(); syncHidden();
+      el.remove(); syncHidden(); updateLimit();
     });
     otherInput.insertAdjacentElement('beforebegin', el);
   }
+  const MAX_SAMPLES = 3;
+  function updateLimit() { panel.classList.toggle('at-limit', selected.size >= MAX_SAMPLES); }
+  function flashLimit() {
+    const box = document.querySelector('.finish-select-input');
+    if (!box) return;
+    box.classList.add('limit-flash');
+    setTimeout(() => box.classList.remove('limit-flash'), 700);
+  }
   function addFinish(name) {
-    if (!name || selected.has(name)) return;
+    if (!name) return false;
+    if (selected.has(name)) return true;
+    if (selected.size >= MAX_SAMPLES) { flashLimit(); return false; }
     selected.add(name); chip(name);
     const cb = panel.querySelector('input[value="'+CSS.escape(name)+'"]');
     if (cb) cb.checked = true;
-    syncHidden();
+    syncHidden(); updateLimit();
+    return true;
   }
   window.__addFinish = addFinish;
 
@@ -67,12 +78,13 @@ setTimeout(checkAnim, 200);
   });
   panel.addEventListener('change', e => {
     if (e.target.type !== 'checkbox') return;
-    if (e.target.checked) addFinish(e.target.value);
-    else {
+    if (e.target.checked) {
+      if (!addFinish(e.target.value)) e.target.checked = false;
+    } else {
       selected.delete(e.target.value);
       const c = chipsArea.querySelector('.finish-chip[data-value="'+CSS.escape(e.target.value)+'"]');
       if (c) c.remove();
-      syncHidden();
+      syncHidden(); updateLimit();
     }
   });
   otherInput.addEventListener('keydown', e => {

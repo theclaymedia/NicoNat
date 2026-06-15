@@ -143,22 +143,22 @@ get_header();
           <figcaption class="swatch-meta"><h3 class="swatch-name">Polished Nickel</h3><span class="swatch-code">NN-M12</span></figcaption>
         </figure>
 
-        <figure class="swatch" tabindex="0" role="button" aria-label="View Brushed Bronze"
-                data-name="Brushed Bronze" data-code="NN-M13" data-category="Metal Finish"
-                data-desc="Brushed Bronze features rich brown tones with warm copper undertones and a finely textured brushed surface that adds depth and character. This durable finish offers a refined, low-sheen appearance that helps conceal fingerprints and minor wear, making it an excellent choice for interior architectural elements, decorative metalwork, and custom furnishings." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/metal_finishes/brushed_bronze.jpg'); ?>">
-          <div class="swatch-img">
-            <img src="<?php echo nn_asset('assets/images/beautiful_finishes/metal_finishes/brushed_bronze.jpg'); ?>" alt="Brushed Bronze" loading="lazy">
-          </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Brushed Bronze</h3><span class="swatch-code">NN-M13</span></figcaption>
-        </figure>
-
         <figure class="swatch" tabindex="0" role="button" aria-label="View Polished Copper"
-                data-name="Polished Copper" data-code="NN-M14" data-category="Metal Finish"
+                data-name="Polished Copper" data-code="NN-M13" data-category="Metal Finish"
                 data-desc="Polished Copper features a vibrant reddish-gold tone with a brilliant reflective surface that brings warmth and visual impact to any space. Its high-luster finish highlights the natural beauty of copper while creating a bold and sophisticated statement." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/metal_finishes/polished_copper.jpg'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/metal_finishes/polished_copper.jpg'); ?>" alt="Polished Copper" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Polished Copper</h3><span class="swatch-code">NN-M14</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Polished Copper</h3><span class="swatch-code">NN-M13</span></figcaption>
+        </figure>
+
+        <figure class="swatch" tabindex="0" role="button" aria-label="View Powder Coating"
+                data-name="Powder Coating" data-code="NN-M14" data-category="Metal Finish"
+                data-desc="Durable powder coat finishes in any custom RAL or texture specification — applied to metalwork for an even, long-lasting color with excellent resistance to wear, weather, and corrosion." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/metal_finishes/powder_coating.jpg'); ?>">
+          <div class="swatch-img">
+            <img src="<?php echo nn_asset('assets/images/beautiful_finishes/metal_finishes/powder_coating.jpg'); ?>" alt="Powder Coating" loading="lazy">
+          </div>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Powder Coating</h3><span class="swatch-code">NN-M14</span></figcaption>
         </figure>
 
       </div>
@@ -295,85 +295,67 @@ get_header();
       </div>
       <div class="swatch-grid">
 
-        <figure class="swatch" tabindex="0" role="button" aria-label="View Marble"
-                data-name="Marble" data-code="NN-C01" data-category="Custom Finish"
-                data-desc="Custom marble surfaces — honed, polished, or leathered — sourced from premium quarries and finished in-house to bring sculptural depth and timeless elegance to countertops, panels, and architectural accents." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/marble.jpg'); ?>">
-          <div class="swatch-img">
-            <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/marble.jpg'); ?>" alt="Marble" loading="lazy">
-          </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Marble</h3><span class="swatch-code">NN-C01</span></figcaption>
-        </figure>
-
         <figure class="swatch" tabindex="0" role="button" aria-label="View Stone"
-                data-name="Stone" data-code="NN-C02" data-category="Custom Finish"
+                data-name="Stone" data-code="NN-C01" data-category="Custom Finish"
                 data-desc="A curated range of natural stones including limestone, travertine, quartzite, and onyx — cut, finished, and detailed in-house to integrate seamlessly with millwork, metalwork, and bespoke interiors." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>" alt="Stone" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Stone</h3><span class="swatch-code">NN-C02</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Stone</h3><span class="swatch-code">NN-C01</span></figcaption>
         </figure>
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Glass"
-                data-name="Glass" data-code="NN-C03" data-category="Custom Finish"
+                data-name="Glass" data-code="NN-C02" data-category="Custom Finish"
                 data-desc="Specialty decorative glass including fluted, reeded, antique, and back-painted treatments — available in clear, tinted, and patterned formats for partitions, casework, and feature elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>" alt="Glass" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Glass</h3><span class="swatch-code">NN-C03</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Glass</h3><span class="swatch-code">NN-C02</span></figcaption>
         </figure>
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Mirrors"
-                data-name="Mirrors" data-code="NN-C04" data-category="Custom Finish"
+                data-name="Mirrors" data-code="NN-C03" data-category="Custom Finish"
                 data-desc="Decorative mirror in clear, smoked, bronze, and antiqued finishes — fabricated and installed to bring depth, light, and reflection into custom interiors and millwork." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/mirrors.jpg'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/mirrors.jpg'); ?>" alt="Mirrors" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Mirrors</h3><span class="swatch-code">NN-C04</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Mirrors</h3><span class="swatch-code">NN-C03</span></figcaption>
         </figure>
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Full Grain Leather"
-                data-name="Full Grain Leather" data-code="NN-C05" data-category="Custom Finish"
+                data-name="Full Grain Leather" data-code="NN-C04" data-category="Custom Finish"
                 data-desc="The highest grade of leather, retaining the hide's natural surface and character. Supple, exceptionally durable, and developing a richer patina over time — ideal for upholstery, panels, and bespoke detailing." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg'); ?>" alt="Full Grain Leather" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Full Grain Leather</h3><span class="swatch-code">NN-C05</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Full Grain Leather</h3><span class="swatch-code">NN-C04</span></figcaption>
         </figure>
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Upholstery"
-                data-name="Upholstery" data-code="NN-C06" data-category="Custom Finish"
+                data-name="Upholstery" data-code="NN-C05" data-category="Custom Finish"
                 data-desc="Bespoke upholstery in premium wools, performance textiles, bouclé weaves, and tactile fabrics — selected and tailored for both visual depth and lasting comfort across seating, banquettes, and integrated millwork." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/upholstery.jpg'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/upholstery.jpg'); ?>" alt="Upholstery" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Upholstery</h3><span class="swatch-code">NN-C06</span></figcaption>
-        </figure>
-
-        <figure class="swatch" tabindex="0" role="button" aria-label="View Powder Coating"
-                data-name="Powder Coating" data-code="NN-C07" data-category="Custom Finish"
-                data-desc="Durable powder coat finishes in any custom RAL or texture specification — applied to metalwork for an even, long-lasting color with excellent resistance to wear, weather, and corrosion." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/powder_coating.jpg'); ?>">
-          <div class="swatch-img">
-            <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/powder_coating.jpg'); ?>" alt="Powder Coating" loading="lazy">
-          </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Powder Coating</h3><span class="swatch-code">NN-C07</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Upholstery</h3><span class="swatch-code">NN-C05</span></figcaption>
         </figure>
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Integrated Lighting"
-                data-name="Integrated Lighting" data-code="NN-C08" data-category="Custom Finish"
+                data-name="Integrated Lighting" data-code="NN-C06" data-category="Custom Finish"
                 data-desc="Linear LED, edge-lit panels, and concealed task lighting built directly into millwork and architectural elements — engineered to highlight materials and accentuate form without visible hardware." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/integrated_lighting.jpg'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/integrated_lighting.jpg'); ?>" alt="Integrated Lighting" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Integrated Lighting</h3><span class="swatch-code">NN-C08</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Integrated Lighting</h3><span class="swatch-code">NN-C06</span></figcaption>
         </figure>
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Acrylic"
-                data-name="Acrylic" data-code="NN-C09" data-category="Custom Finish"
+                data-name="Acrylic" data-code="NN-C07" data-category="Custom Finish"
                 data-desc="Cast and machined acrylic in a wide range of clarities, colors, and surface textures — ideal for decorative panels, illuminated signage, sculptural lighting, and bespoke interior elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/acrylic.jpg'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/acrylic.jpg'); ?>" alt="Acrylic" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Acrylic</h3><span class="swatch-code">NN-C09</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Acrylic</h3><span class="swatch-code">NN-C07</span></figcaption>
         </figure>
 
       </div>

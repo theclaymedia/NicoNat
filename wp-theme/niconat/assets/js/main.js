@@ -41,7 +41,7 @@ function animateCounters() {
       c.dataset.done = '1';
       const target = parseInt(c.dataset.target);
       let cur = 0; const inc = target / 60;
-      const timer = setInterval(() => { cur += inc; if (cur >= target) { cur = target; clearInterval(timer); } c.textContent = Math.floor(cur); }, 30);
+      const timer = setInterval(() => { cur += inc; if (cur >= target) { cur = target; clearInterval(timer); } c.textContent = Math.floor(cur).toLocaleString('en-US'); }, 30);
     }
   });
 }

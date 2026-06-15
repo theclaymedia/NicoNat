@@ -26,3 +26,9 @@ body.admin-bar .header { top: 32px; }
   border: 1px solid var(--beige); border-radius: 8px; font-size: 14px;
 }
 .contact-form .wpcf7-response-output { color: #fff; border-color: rgba(255,255,255,0.25); }
+
+/* Application radios (CF7 [radio application ...]) */
+.sample-radios .wpcf7-form-control.wpcf7-radio { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.sample-radios .wpcf7-list-item { margin: 0; }
+.sample-radios .wpcf7-list-item label { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
+.sample-radios .wpcf7-list-item input { accent-color: var(--primary); width: 16px; height: 16px; }
