@@ -31,6 +31,17 @@ function nn_finishes_url() {
 	return $page ? get_permalink( $page ) : home_url( '/finishes/' );
 }
 
+/**
+ * Permalink of the Work archive. Returns the 'work' (or 'projects') page/CPT
+ * archive when it exists; falls back to the homepage portfolio section until
+ * the Projects custom post type is built (see README).
+ */
+function nn_work_url() {
+	$page = get_page_by_path( 'work' );
+	if ( ! $page ) { $page = get_page_by_path( 'projects' ); }
+	return $page ? get_permalink( $page ) : home_url( '/#portfolio' );
+}
+
 function nn_is_finishes() {
 	return is_page( 'finishes' ) || is_page_template( 'page-finishes.php' );
 }

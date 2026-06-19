@@ -170,9 +170,7 @@ detail pages (`project-*.html`) so the client has something to review. In
 WordPress these should be implemented as a **Projects custom post type**
 (title, location, type, hero image, gallery, scope-of-work, body) rather than
 hand-built page templates, with archive + single templates reusing the
-`.project-*` styles already in `finishes.css`. The homepage "View Project" /
-"View All Projects" buttons in `front-page.php` should then point at the CPT
-permalinks. Until the CPT exists, those buttons are placeholders.
+`.project-*` styles already in `finishes.css`. Give the archive the slug **`work`** so the existing `nn_work_url()` helper resolves to it automatically (the header "Work" nav and the "View All Projects" button already call it; until a `work`/`projects` page or CPT archive exists they fall back to the homepage portfolio section). The individual "View Project" buttons in `front-page.php` should point at each project's CPT permalink; until then they are `#` placeholders.
 
 ## Partnership Collection vendor links
 

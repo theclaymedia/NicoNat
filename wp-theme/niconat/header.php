@@ -30,7 +30,7 @@ function nn_anchor( $hash ) {
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"><img src="<?php echo nn_asset( 'assets/images/niconat-logo-new.png' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>"></a>
       <nav class="nav" id="nav">
         <a href="<?php echo nn_anchor( 'hero' ); ?>" class="nav-link">Home</a>
-        <a href="<?php echo nn_anchor( 'portfolio' ); ?>" class="nav-link">Work</a>
+        <a href="<?php echo esc_url( nn_work_url() ); ?>" class="nav-link">Work</a>
         <a href="<?php echo esc_url( nn_finishes_url() ); ?>" class="nav-link<?php echo nn_is_finishes() ? ' is-current' : ''; ?>">Finishes</a>
         <a href="<?php echo nn_anchor( 'services' ); ?>" class="nav-link">Services</a>
         <a href="<?php echo nn_anchor( 'about' ); ?>" class="nav-link">About</a>
