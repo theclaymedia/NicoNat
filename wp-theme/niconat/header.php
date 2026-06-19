@@ -17,6 +17,8 @@ function nn_anchor( $hash ) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="<?php echo nn_asset( 'assets/images/niconat-favicon.png' ); ?>">
+  <link rel="apple-touch-icon" href="<?php echo nn_asset( 'assets/images/niconat-favicon.png' ); ?>">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
