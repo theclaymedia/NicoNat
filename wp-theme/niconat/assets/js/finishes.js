@@ -109,6 +109,8 @@ setTimeout(checkAnim, 200);
   const code = document.getElementById('modalCode');
   const cat = document.getElementById('modalCat');
   const desc = document.getElementById('modalDesc');
+  const vendorsWrap = document.getElementById('modalVendors');
+  const vendorLinks = document.getElementById('modalVendorLinks');
   const req = document.getElementById('modalRequest');
   const close = document.getElementById('modalClose');
   let current = null;
@@ -127,6 +129,23 @@ setTimeout(checkAnim, 200);
     cat.textContent = current.cat;
     desc.textContent = current.desc;
     desc.style.display = current.desc ? '' : 'none';
+    vendorLinks.innerHTML = '';
+    const vendors = s.dataset.vendors || '';
+    if (vendors) {
+      vendors.split(';').forEach(pair => {
+        const i = pair.indexOf('|');
+        if (i < 0) return;
+        const vn = pair.slice(0, i).trim(), vu = pair.slice(i + 1).trim();
+        if (!vn || !vu) return;
+        const a = document.createElement('a');
+        a.href = vu; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.className = 'vendor-link';
+        a.textContent = vn;
+        a.innerHTML += ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>';
+        vendorLinks.appendChild(a);
+      });
+      vendorsWrap.hidden = false;
+    } else { vendorsWrap.hidden = true; }
     modal.classList.add('open');
     modal.setAttribute('aria-hidden','false');
     document.body.classList.add('modal-open');

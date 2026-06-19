@@ -23,7 +23,7 @@ get_header();
   <nav class="fin-tabs" aria-label="Jump to finish category">
     <a href="#metal" class="fin-tab">Metal Finishes</a>
     <a href="#wood" class="fin-tab">Wood Finishes</a>
-    <a href="#custom" class="fin-tab">Custom Finishes</a>
+    <a href="#custom" class="fin-tab">Partnerships</a>
   </nav>
 
   <section id="metal" class="fin-swatches">
@@ -289,73 +289,55 @@ get_header();
   <section id="custom" class="fin-swatches">
     <div class="container">
       <div class="fin-swatches-head anim">
-        <div class="section-label">Custom Finishes</div>
-        <h2 class="section-title">The <span>Custom</span> Collection</h2>
-        <p>Specialty surfaces beyond metal and wood — marble, stone, glass, leather, upholstery, integrated lighting, and more.</p>
+        <div class="section-label">Partnership Collection</div>
+        <h2 class="section-title">The <span>Partnership</span> Collection</h2>
+        <p>Premium materials we source from trusted partners &mdash; stone, glass &amp; mirror, leather, and integrated lighting &mdash; to craft beautiful, fully bespoke fixtures. Each links straight to the partner we work with.</p>
       </div>
       <div class="swatch-grid">
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Stone"
-                data-name="Stone" data-code="NN-C01" data-category="Custom Finish"
-                data-desc="A curated range of natural stones including limestone, travertine, quartzite, and onyx — cut, finished, and detailed in-house to integrate seamlessly with millwork, metalwork, and bespoke interiors." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>">
+                data-name="Stone" data-code="NN-C01" data-category="Partnership"
+                data-desc="A curated range of natural stones including limestone, travertine, quartzite, and onyx — cut, finished, and detailed in-house to integrate seamlessly with millwork, metalwork, and bespoke interiors." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>" data-vendors="Cosentino|https://www.cosentino.com/;FENIX for Interiors|https://www.fenixforinteriors-na.com/">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>" alt="Stone" loading="lazy">
           </div>
           <figcaption class="swatch-meta"><h3 class="swatch-name">Stone</h3><span class="swatch-code">NN-C01</span></figcaption>
         </figure>
 
-        <figure class="swatch" tabindex="0" role="button" aria-label="View Glass"
-                data-name="Glass" data-code="NN-C02" data-category="Custom Finish"
-                data-desc="Specialty decorative glass including fluted, reeded, antique, and back-painted treatments — available in clear, tinted, and patterned formats for partitions, casework, and feature elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>">
+        <figure class="swatch" tabindex="0" role="button" aria-label="View Glass &amp; Mirror"
+                data-name="Glass &amp; Mirror" data-code="NN-C02" data-category="Partnership"
+                data-desc="Specialty decorative glass including fluted, reeded, antique, and back-painted treatments — available in clear, tinted, and patterned formats for partitions, casework, and feature elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>" data-vendors="GlassPro|https://glas-pro.com/">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>" alt="Glass" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Glass</h3><span class="swatch-code">NN-C02</span></figcaption>
-        </figure>
-
-        <figure class="swatch" tabindex="0" role="button" aria-label="View Mirrors"
-                data-name="Mirrors" data-code="NN-C03" data-category="Custom Finish"
-                data-desc="Decorative mirror in clear, smoked, bronze, and antiqued finishes — fabricated and installed to bring depth, light, and reflection into custom interiors and millwork." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/mirrors.jpg'); ?>">
-          <div class="swatch-img">
-            <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/mirrors.jpg'); ?>" alt="Mirrors" loading="lazy">
-          </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Mirrors</h3><span class="swatch-code">NN-C03</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Glass &amp; Mirror</h3><span class="swatch-code">NN-C02</span></figcaption>
         </figure>
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Full Grain Leather"
-                data-name="Full Grain Leather" data-code="NN-C04" data-category="Custom Finish"
-                data-desc="The highest grade of leather, retaining the hide's natural surface and character. Supple, exceptionally durable, and developing a richer patina over time — ideal for upholstery, panels, and bespoke detailing." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg'); ?>">
+                data-name="Full Grain Leather" data-code="NN-C03" data-category="Partnership"
+                data-desc="The highest grade of leather, retaining the hide's natural surface and character. Supple, exceptionally durable, and developing a richer patina over time — ideal for upholstery, panels, and bespoke detailing." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg'); ?>" data-vendors="Maharam|https://www.maharam.com/;Jamie Stern|https://jamiesterndesign.com/">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg'); ?>" alt="Full Grain Leather" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Full Grain Leather</h3><span class="swatch-code">NN-C04</span></figcaption>
-        </figure>
-
-        <figure class="swatch" tabindex="0" role="button" aria-label="View Upholstery"
-                data-name="Upholstery" data-code="NN-C05" data-category="Custom Finish"
-                data-desc="Bespoke upholstery in premium wools, performance textiles, bouclé weaves, and tactile fabrics — selected and tailored for both visual depth and lasting comfort across seating, banquettes, and integrated millwork." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/upholstery.jpg'); ?>">
-          <div class="swatch-img">
-            <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/upholstery.jpg'); ?>" alt="Upholstery" loading="lazy">
-          </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Upholstery</h3><span class="swatch-code">NN-C05</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Full Grain Leather</h3><span class="swatch-code">NN-C03</span></figcaption>
         </figure>
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Integrated Lighting"
-                data-name="Integrated Lighting" data-code="NN-C06" data-category="Custom Finish"
-                data-desc="Linear LED, edge-lit panels, and concealed task lighting built directly into millwork and architectural elements — engineered to highlight materials and accentuate form without visible hardware." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/integrated_lighting.jpg'); ?>">
+                data-name="Integrated Lighting" data-code="NN-C04" data-category="Partnership"
+                data-desc="Linear LED, edge-lit panels, and concealed task lighting built directly into millwork and architectural elements — engineered to highlight materials and accentuate form without visible hardware." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/integrated_lighting.jpg'); ?>" data-vendors="Hera Lighting|https://www.heralighting.com/">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/integrated_lighting.jpg'); ?>" alt="Integrated Lighting" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Integrated Lighting</h3><span class="swatch-code">NN-C06</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Integrated Lighting</h3><span class="swatch-code">NN-C04</span></figcaption>
         </figure>
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Acrylic"
-                data-name="Acrylic" data-code="NN-C07" data-category="Custom Finish"
+                data-name="Acrylic" data-code="NN-C05" data-category="Partnership"
                 data-desc="Cast and machined acrylic in a wide range of clarities, colors, and surface textures — ideal for decorative panels, illuminated signage, sculptural lighting, and bespoke interior elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/acrylic.jpg'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/acrylic.jpg'); ?>" alt="Acrylic" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Acrylic</h3><span class="swatch-code">NN-C07</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Acrylic</h3><span class="swatch-code">NN-C05</span></figcaption>
         </figure>
 
       </div>
@@ -368,7 +350,7 @@ get_header();
       <div class="fin-samples-head anim">
         <div class="section-label">Sample Process</div>
         <h2 class="section-title">Request <span>Samples</span></h2>
-        <p>Select the finishes you'd like to see in person. We'll prepare physical samples and ship them to you, typically within 2&ndash;3 business days.</p>
+        <p>Select the finishes you'd like to see in person. We'll prepare physical samples and ship them to you, typically within 5&ndash;7 business days.</p>
       </div>
 
       <!-- TODO: This form is a styled mockup. Wire the submit handler to a real

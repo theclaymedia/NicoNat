@@ -28,11 +28,15 @@ get_header();
           <span>Retail Fixtures</span><span class="dot">&bull;</span>
           <span>Shop Interiors</span><span class="dot">&bull;</span>
           <span>Display Systems</span><span class="dot">&bull;</span>
+          <span>Hospitality</span><span class="dot">&bull;</span>
+          <span>High-End Residential</span><span class="dot">&bull;</span>
           <span>Brand Environments</span><span class="dot">&bull;</span>
           <span>Flagship Stores</span><span class="dot">&bull;</span>
           <span>Retail Fixtures</span><span class="dot">&bull;</span>
           <span>Shop Interiors</span><span class="dot">&bull;</span>
           <span>Display Systems</span><span class="dot">&bull;</span>
+          <span>Hospitality</span><span class="dot">&bull;</span>
+          <span>High-End Residential</span><span class="dot">&bull;</span>
         </div>
       </div>
       <div class="hero-text">

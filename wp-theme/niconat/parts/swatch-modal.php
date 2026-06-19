@@ -15,6 +15,10 @@
         <h2 class="swatch-modal-name" id="modalName"></h2>
         <div class="swatch-modal-code" id="modalCode"></div>
         <p class="swatch-modal-desc" id="modalDesc"></p>
+        <div class="swatch-modal-vendors" id="modalVendors" hidden>
+          <span class="vendors-label">Sourced in partnership with</span>
+          <div class="vendors-links" id="modalVendorLinks"></div>
+        </div>
         <button type="button" class="btn-primary" id="modalRequest">
           Request a Sample
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>

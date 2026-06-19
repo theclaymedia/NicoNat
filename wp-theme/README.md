@@ -97,14 +97,12 @@ you complete the Forms step below.
           <label class="finish-opt"><input type="checkbox" value="Dark Ebony (NN-W12)"> <span class="finish-opt-name">Dark Ebony</span> <span class="finish-opt-code">NN-W12</span></label>
         </div>
         <div class="finish-group">
-          <h4>Custom Finishes</h4>
+          <h4>Partnership Collection</h4>
           <label class="finish-opt"><input type="checkbox" value="Stone (NN-C01)"> <span class="finish-opt-name">Stone</span> <span class="finish-opt-code">NN-C01</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Glass (NN-C02)"> <span class="finish-opt-name">Glass</span> <span class="finish-opt-code">NN-C02</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Mirrors (NN-C03)"> <span class="finish-opt-name">Mirrors</span> <span class="finish-opt-code">NN-C03</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Full Grain Leather (NN-C04)"> <span class="finish-opt-name">Full Grain Leather</span> <span class="finish-opt-code">NN-C04</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Upholstery (NN-C05)"> <span class="finish-opt-name">Upholstery</span> <span class="finish-opt-code">NN-C05</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Integrated Lighting (NN-C06)"> <span class="finish-opt-name">Integrated Lighting</span> <span class="finish-opt-code">NN-C06</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Acrylic (NN-C07)"> <span class="finish-opt-name">Acrylic</span> <span class="finish-opt-code">NN-C07</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Glass &amp; Mirror (NN-C02)"> <span class="finish-opt-name">Glass &amp; Mirror</span> <span class="finish-opt-code">NN-C02</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Full Grain Leather (NN-C03)"> <span class="finish-opt-name">Full Grain Leather</span> <span class="finish-opt-code">NN-C03</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Integrated Lighting (NN-C04)"> <span class="finish-opt-name">Integrated Lighting</span> <span class="finish-opt-code">NN-C04</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Acrylic (NN-C05)"> <span class="finish-opt-name">Acrylic</span> <span class="finish-opt-code">NN-C05</span></label>
         </div>
             </div>
             [hidden finishes]
@@ -163,3 +161,22 @@ Everything else is pixel-identical.
   `finishes.js`.
 - Images ship inside the theme (hardcoded-content phase). A later phase can
   move content into ACF/Customizer if the client needs self-serve editing.
+
+
+## Projects (Work) — dev follow-up
+
+The mockup ships a static Work archive (`projects.html`) plus eight project
+detail pages (`project-*.html`) so the client has something to review. In
+WordPress these should be implemented as a **Projects custom post type**
+(title, location, type, hero image, gallery, scope-of-work, body) rather than
+hand-built page templates, with archive + single templates reusing the
+`.project-*` styles already in `finishes.css`. The homepage "View Project" /
+"View All Projects" buttons in `front-page.php` should then point at the CPT
+permalinks. Until the CPT exists, those buttons are placeholders.
+
+## Partnership Collection vendor links
+
+The former "Custom Finishes" section is now the **Partnership Collection**.
+Each partnership swatch carries a `data-vendors="Name|URL;Name|URL"` attribute;
+the swatch modal renders these as outbound links. Vendor URLs live in
+`page-finishes.php` — update them there if a partner's URL changes.

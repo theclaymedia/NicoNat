@@ -74,14 +74,12 @@ if ( NN_CF7_SAMPLES && function_exists( 'wpcf7' ) ) : ?>
           <label class="finish-opt"><input type="checkbox" value="Dark Ebony (NN-W12)"> <span class="finish-opt-name">Dark Ebony</span> <span class="finish-opt-code">NN-W12</span></label>
         </div>
         <div class="finish-group">
-          <h4>Custom Finishes</h4>
+          <h4>Partnership Collection</h4>
           <label class="finish-opt"><input type="checkbox" value="Stone (NN-C01)"> <span class="finish-opt-name">Stone</span> <span class="finish-opt-code">NN-C01</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Glass (NN-C02)"> <span class="finish-opt-name">Glass</span> <span class="finish-opt-code">NN-C02</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Mirrors (NN-C03)"> <span class="finish-opt-name">Mirrors</span> <span class="finish-opt-code">NN-C03</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Full Grain Leather (NN-C04)"> <span class="finish-opt-name">Full Grain Leather</span> <span class="finish-opt-code">NN-C04</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Upholstery (NN-C05)"> <span class="finish-opt-name">Upholstery</span> <span class="finish-opt-code">NN-C05</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Integrated Lighting (NN-C06)"> <span class="finish-opt-name">Integrated Lighting</span> <span class="finish-opt-code">NN-C06</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Acrylic (NN-C07)"> <span class="finish-opt-name">Acrylic</span> <span class="finish-opt-code">NN-C07</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Glass &amp; Mirror (NN-C02)"> <span class="finish-opt-name">Glass &amp; Mirror</span> <span class="finish-opt-code">NN-C02</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Full Grain Leather (NN-C03)"> <span class="finish-opt-name">Full Grain Leather</span> <span class="finish-opt-code">NN-C03</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Integrated Lighting (NN-C04)"> <span class="finish-opt-name">Integrated Lighting</span> <span class="finish-opt-code">NN-C04</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Acrylic (NN-C05)"> <span class="finish-opt-name">Acrylic</span> <span class="finish-opt-code">NN-C05</span></label>
         </div>
             </div>
             <input type="hidden" id="finishHidden" name="finishes">
@@ -112,6 +110,6 @@ if ( NN_CF7_SAMPLES && function_exists( 'wpcf7' ) ) : ?>
       <div class="sample-confirm" id="sampleConfirm">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
         <h3>Thank you!</h3>
-        <p>Your sample request has been received. Our team will be in touch within 2&ndash;3 business days to confirm the details and ship your samples.</p>
+        <p>Your sample request has been received. Our team will be in touch within 5&ndash;7 business days to confirm the details and ship your samples.</p>
       </div>
 <?php endif; ?>
