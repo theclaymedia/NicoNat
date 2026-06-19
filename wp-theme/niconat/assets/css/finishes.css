@@ -126,7 +126,7 @@ ul { list-style: none; }
   display: flex; justify-content: center; flex-wrap: wrap; gap: 8px;
   background: var(--cream); border-bottom: 1px solid var(--beige);
   padding: 18px 24px;
-  position: sticky; top: 64px; z-index: 500;
+  position: sticky; top: 84px; z-index: 500;
 }
 .fin-tab {
   font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
@@ -137,7 +137,7 @@ ul { list-style: none; }
 .fin-tab.is-current { background: var(--primary); color: #fff; }
 
 /* ===== SWATCH GRID ===== */
-.fin-swatches { padding: 80px 0; background: #fff; scroll-margin-top: 124px; }
+.fin-swatches { padding: 80px 0; background: #fff; scroll-margin-top: 176px; }
 .fin-swatches.alt { background: var(--cream); border-top: 1px solid var(--beige); border-bottom: 1px solid var(--beige); }
 .fin-swatches-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
 .fin-swatches-head .section-title { font-size: clamp(28px, 3.4vw, 44px); margin-bottom: 14px; }
@@ -465,8 +465,9 @@ body.modal-open { overflow: hidden; }
     box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   }
   .fin-hero { padding: 130px 0 56px; }
+  .fin-swatches { scroll-margin-top: 144px; }
   .fin-tabs {
-    top: 60px;
+    top: 84px;
     flex-wrap: nowrap; gap: 4px;
     padding: 10px 8px;
     justify-content: flex-start;
