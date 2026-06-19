@@ -350,7 +350,7 @@ get_header();
       <div class="fin-samples-head anim">
         <div class="section-label">Sample Process</div>
         <h2 class="section-title">Request <span>Samples</span></h2>
-        <p>Select the finishes you'd like to see in person. We'll prepare physical samples and ship them to you, typically within 5&ndash;7 business days.</p>
+        <p>Select the finishes you'd like to see in person. We'll prepare physical samples and ship them to you, typically within <strong>5&ndash;7 business days</strong>.</p>
       </div>
 
       <!-- TODO: This form is a styled mockup. Wire the submit handler to a real

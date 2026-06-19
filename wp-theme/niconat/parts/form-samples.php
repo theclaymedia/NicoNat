@@ -110,6 +110,6 @@ if ( NN_CF7_SAMPLES && function_exists( 'wpcf7' ) ) : ?>
       <div class="sample-confirm" id="sampleConfirm">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
         <h3>Thank you!</h3>
-        <p>Your sample request has been received. Our team will be in touch within 5&ndash;7 business days to confirm the details and ship your samples.</p>
+        <p>Your sample request has been received. Our team will be in touch within <strong>5&ndash;7 business days</strong> to confirm the details and ship your samples.</p>
       </div>
 <?php endif; ?>
