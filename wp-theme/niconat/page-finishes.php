@@ -297,7 +297,7 @@ get_header();
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Stone"
                 data-name="Stone" data-code="NN-C01" data-category="Partnership"
-                data-desc="A curated range of natural stones including limestone, travertine, quartzite, and onyx — cut, finished, and detailed in-house to integrate seamlessly with millwork, metalwork, and bespoke interiors." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>" data-vendors="Cosentino|https://www.cosentino.com/;FENIX for Interiors|https://www.fenixforinteriors-na.com/">
+                data-desc="A curated range of natural stones including limestone, travertine, quartzite, and onyx — cut, finished, and detailed in-house to integrate seamlessly with millwork, metalwork, and bespoke interiors." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>" data-vendors="Cosentino|https://www.cosentino.com/|<?php echo nn_asset('assets/images/logos/Consentino_logo.png'); ?>;FENIX for Interiors|https://www.fenixforinteriors-na.com/|<?php echo nn_asset('assets/images/logos/Fenix_logo.png'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>" alt="Stone" loading="lazy">
           </div>
@@ -306,7 +306,7 @@ get_header();
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Glass &amp; Mirror"
                 data-name="Glass &amp; Mirror" data-code="NN-C02" data-category="Partnership"
-                data-desc="Specialty decorative glass including fluted, reeded, antique, and back-painted treatments — available in clear, tinted, and patterned formats for partitions, casework, and feature elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>" data-vendors="GlassPro|https://glas-pro.com/">
+                data-desc="Specialty decorative glass including fluted, reeded, antique, and back-painted treatments — available in clear, tinted, and patterned formats for partitions, casework, and feature elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>" data-vendors="GlassPro|https://glas-pro.com/|<?php echo nn_asset('assets/images/logos/glaspro_logo.png'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>" alt="Glass" loading="lazy">
           </div>
@@ -315,7 +315,7 @@ get_header();
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Full Grain Leather"
                 data-name="Full Grain Leather" data-code="NN-C03" data-category="Partnership"
-                data-desc="The highest grade of leather, retaining the hide's natural surface and character. Supple, exceptionally durable, and developing a richer patina over time — ideal for upholstery, panels, and bespoke detailing." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg'); ?>" data-vendors="Maharam|https://www.maharam.com/;Jamie Stern|https://jamiesterndesign.com/">
+                data-desc="The highest grade of leather, retaining the hide's natural surface and character. Supple, exceptionally durable, and developing a richer patina over time — ideal for upholstery, panels, and bespoke detailing." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg'); ?>" data-vendors="Maharam|https://www.maharam.com/|<?php echo nn_asset('assets/images/logos/maharam_logo.png'); ?>;Jamie Stern|https://jamiesterndesign.com/|<?php echo nn_asset('assets/images/logos/Jamie_stern_logo.png'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg'); ?>" alt="Full Grain Leather" loading="lazy">
           </div>
@@ -324,7 +324,7 @@ get_header();
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Integrated Lighting"
                 data-name="Integrated Lighting" data-code="NN-C04" data-category="Partnership"
-                data-desc="Linear LED, edge-lit panels, and concealed task lighting built directly into millwork and architectural elements — engineered to highlight materials and accentuate form without visible hardware." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/integrated_lighting.jpg'); ?>" data-vendors="Hera Lighting|https://www.heralighting.com/">
+                data-desc="Linear LED, edge-lit panels, and concealed task lighting built directly into millwork and architectural elements — engineered to highlight materials and accentuate form without visible hardware." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/integrated_lighting.jpg'); ?>" data-vendors="Hera Lighting|https://www.heralighting.com/|<?php echo nn_asset('assets/images/logos/Hera_logo.png'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/integrated_lighting.jpg'); ?>" alt="Integrated Lighting" loading="lazy">
           </div>

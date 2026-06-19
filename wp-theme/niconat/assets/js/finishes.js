@@ -133,15 +133,22 @@ setTimeout(checkAnim, 200);
     const vendors = s.dataset.vendors || '';
     if (vendors) {
       vendors.split(';').forEach(pair => {
-        const i = pair.indexOf('|');
-        if (i < 0) return;
-        const vn = pair.slice(0, i).trim(), vu = pair.slice(i + 1).trim();
+        const bits = pair.split('|');
+        const vn = (bits[0] || '').trim(), vu = (bits[1] || '').trim(), vl = (bits[2] || '').trim();
         if (!vn || !vu) return;
         const a = document.createElement('a');
         a.href = vu; a.target = '_blank'; a.rel = 'noopener noreferrer';
-        a.className = 'vendor-link';
-        a.textContent = vn;
-        a.innerHTML += ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>';
+        a.title = vn + ' — opens in a new tab';
+        if (vl) {
+          a.className = 'vendor-logo-link';
+          const im = document.createElement('img');
+          im.src = vl; im.alt = vn; im.loading = 'lazy';
+          a.appendChild(im);
+        } else {
+          a.className = 'vendor-link';
+          a.textContent = vn;
+          a.innerHTML += ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>';
+        }
         vendorLinks.appendChild(a);
       });
       vendorsWrap.hidden = false;
