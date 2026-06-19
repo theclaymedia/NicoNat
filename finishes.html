@@ -322,7 +322,7 @@
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Stone"
                 data-name="Stone" data-code="NN-C01" data-category="Partnership"
-                data-desc="A curated range of natural stones including limestone, travertine, quartzite, and onyx — cut, finished, and detailed in-house to integrate seamlessly with millwork, metalwork, and bespoke interiors." data-img="assets/images/beautiful_finishes/custom_finishes/stone.jpg" data-vendors="Cosentino|https://www.cosentino.com/;FENIX for Interiors|https://www.fenixforinteriors-na.com/">
+                data-desc="A curated range of natural stones including limestone, travertine, quartzite, and onyx — cut, finished, and detailed in-house to integrate seamlessly with millwork, metalwork, and bespoke interiors." data-img="assets/images/beautiful_finishes/custom_finishes/stone.jpg" data-vendors="Cosentino|https://www.cosentino.com/|assets/images/logos/Consentino_logo.png;FENIX for Interiors|https://www.fenixforinteriors-na.com/|assets/images/logos/Fenix_logo.png">
           <div class="swatch-img">
             <img src="assets/images/beautiful_finishes/custom_finishes/stone.jpg" alt="Stone" loading="lazy">
           </div>
@@ -331,7 +331,7 @@
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Glass &amp; Mirror"
                 data-name="Glass &amp; Mirror" data-code="NN-C02" data-category="Partnership"
-                data-desc="Specialty decorative glass including fluted, reeded, antique, and back-painted treatments — available in clear, tinted, and patterned formats for partitions, casework, and feature elements." data-img="assets/images/beautiful_finishes/custom_finishes/glass.jpg" data-vendors="GlassPro|https://glas-pro.com/">
+                data-desc="Specialty decorative glass including fluted, reeded, antique, and back-painted treatments — available in clear, tinted, and patterned formats for partitions, casework, and feature elements." data-img="assets/images/beautiful_finishes/custom_finishes/glass.jpg" data-vendors="GlassPro|https://glas-pro.com/|assets/images/logos/glaspro_logo.png">
           <div class="swatch-img">
             <img src="assets/images/beautiful_finishes/custom_finishes/glass.jpg" alt="Glass" loading="lazy">
           </div>
@@ -340,7 +340,7 @@
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Full Grain Leather"
                 data-name="Full Grain Leather" data-code="NN-C03" data-category="Partnership"
-                data-desc="The highest grade of leather, retaining the hide's natural surface and character. Supple, exceptionally durable, and developing a richer patina over time — ideal for upholstery, panels, and bespoke detailing." data-img="assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg" data-vendors="Maharam|https://www.maharam.com/;Jamie Stern|https://jamiesterndesign.com/">
+                data-desc="The highest grade of leather, retaining the hide's natural surface and character. Supple, exceptionally durable, and developing a richer patina over time — ideal for upholstery, panels, and bespoke detailing." data-img="assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg" data-vendors="Maharam|https://www.maharam.com/|assets/images/logos/maharam_logo.png;Jamie Stern|https://jamiesterndesign.com/|assets/images/logos/Jamie_stern_logo.png">
           <div class="swatch-img">
             <img src="assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg" alt="Full Grain Leather" loading="lazy">
           </div>
@@ -349,7 +349,7 @@
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Integrated Lighting"
                 data-name="Integrated Lighting" data-code="NN-C04" data-category="Partnership"
-                data-desc="Linear LED, edge-lit panels, and concealed task lighting built directly into millwork and architectural elements — engineered to highlight materials and accentuate form without visible hardware." data-img="assets/images/beautiful_finishes/custom_finishes/integrated_lighting.jpg" data-vendors="Hera Lighting|https://www.heralighting.com/">
+                data-desc="Linear LED, edge-lit panels, and concealed task lighting built directly into millwork and architectural elements — engineered to highlight materials and accentuate form without visible hardware." data-img="assets/images/beautiful_finishes/custom_finishes/integrated_lighting.jpg" data-vendors="Hera Lighting|https://www.heralighting.com/|assets/images/logos/Hera_logo.png">
           <div class="swatch-img">
             <img src="assets/images/beautiful_finishes/custom_finishes/integrated_lighting.jpg" alt="Integrated Lighting" loading="lazy">
           </div>
@@ -683,15 +683,22 @@
         const vendors = s.dataset.vendors || '';
         if (vendors) {
           vendors.split(';').forEach(pair => {
-            const i = pair.indexOf('|');
-            if (i < 0) return;
-            const vn = pair.slice(0, i).trim(), vu = pair.slice(i + 1).trim();
+            const bits = pair.split('|');
+            const vn = (bits[0] || '').trim(), vu = (bits[1] || '').trim(), vl = (bits[2] || '').trim();
             if (!vn || !vu) return;
             const a = document.createElement('a');
             a.href = vu; a.target = '_blank'; a.rel = 'noopener noreferrer';
-            a.className = 'vendor-link';
-            a.textContent = vn;
-            a.innerHTML += ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>';
+            a.title = vn + ' — opens in a new tab';
+            if (vl) {
+              a.className = 'vendor-logo-link';
+              const im = document.createElement('img');
+              im.src = vl; im.alt = vn; im.loading = 'lazy';
+              a.appendChild(im);
+            } else {
+              a.className = 'vendor-link';
+              a.textContent = vn;
+              a.innerHTML += ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>';
+            }
             vendorLinks.appendChild(a);
           });
           vendorsWrap.hidden = false;
