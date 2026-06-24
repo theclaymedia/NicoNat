@@ -7,7 +7,7 @@ get_header();
 ?>
 
   <!-- PAGE HERO -->
-  <section class="fin-hero">
+  <section class="fin-hero" style="background-image: linear-gradient(to bottom, rgba(20,16,14,0.55), rgba(20,16,14,0.72)), url('<?php echo nn_asset( 'assets/NN_new_images/Bavette_s_Steakhouse___Bar___Bar_1.jpg' ); ?>'); background-size: cover; background-position: center;">
     <div class="container">
       <div class="fin-breadcrumb">
         <a href="<?php echo esc_url( home_url('/') ); ?>">Home</a><span class="sep">/</span>
