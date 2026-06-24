@@ -297,7 +297,7 @@ get_header();
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Stone"
                 data-name="Stone" data-code="NN-C01" data-category="Partnership"
-                data-desc="A curated range of natural stones including limestone, travertine, quartzite, and onyx — cut, finished, and detailed in-house to integrate seamlessly with millwork, metalwork, and bespoke interiors." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>" data-vendors="Gem International|https://gem-international.net/">
+                data-desc="A curated range of natural stones including limestone, travertine, quartzite, and onyx — cut, finished, and detailed in-house to integrate seamlessly with millwork, metalwork, and bespoke interiors." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>" data-vendors="Gem International|https://gem-international.net/|<?php echo nn_asset('assets/images/logos/Gem_international.png'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>" alt="Stone" loading="lazy">
           </div>
@@ -306,7 +306,7 @@ get_header();
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Glass"
                 data-name="Glass" data-code="NN-C02" data-category="Partnership"
-                data-desc="Specialty architectural glass &mdash; fluted, reeded, antiqued, back-painted, and patterned treatments in clear or tinted formats &mdash; for partitions, casework, and feature elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>" data-vendors="Pulp Studio|https://www.pulpstudio.com/">
+                data-desc="Specialty architectural glass &mdash; fluted, reeded, antiqued, back-painted, and patterned treatments in clear or tinted formats &mdash; for partitions, casework, and feature elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>" data-vendors="Pulp Studio|https://www.pulpstudio.com/|<?php echo nn_asset('assets/images/logos/Pulp_Studio.png'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>" alt="Glass" loading="lazy">
           </div>
@@ -342,7 +342,7 @@ get_header();
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Acrylic"
                 data-name="Acrylic" data-code="NN-C06" data-category="Partnership"
-                data-desc="Cast and machined acrylic in a wide range of clarities, colors, and surface textures — ideal for decorative panels, illuminated signage, sculptural lighting, and bespoke interior elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/acrylic.jpg'); ?>" data-vendors="Piedmont Plastics|https://www.piedmontplastics.com/;Materials Inc|https://materials-inc.com/">
+                data-desc="Cast and machined acrylic in a wide range of clarities, colors, and surface textures — ideal for decorative panels, illuminated signage, sculptural lighting, and bespoke interior elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/acrylic.jpg'); ?>" data-vendors="Piedmont Plastics|https://www.piedmontplastics.com/|<?php echo nn_asset('assets/images/logos/Piedmont_plastics.png'); ?>;Materials Inc|https://materials-inc.com/|<?php echo nn_asset('assets/images/logos/Materials_inc.png'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/acrylic.jpg'); ?>" alt="Acrylic" loading="lazy">
           </div>
