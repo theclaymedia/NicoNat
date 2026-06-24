@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shooting Star — NicoNat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/finishes.css">
+  <link rel="icon" type="image/png" href="assets/images/niconat-favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/niconat-favicon.png">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="assets/images/niconat-logo-new.png" alt="NicoNat — The Future of Manufacturing"></a>
+      <nav class="nav" id="nav">
+        <a href="index.html#hero" class="nav-link">Home</a>
+        <a href="projects.html" class="nav-link is-current">Work</a>
+        <a href="finishes.html" class="nav-link">Finishes</a>
+        <a href="index.html#services" class="nav-link">Services</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="index.html#contact" class="nav-cta">Start a Project</a>
+      </nav>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- PROJECT HERO -->
+  <section class="project-hero" style="background-image:linear-gradient(to top, rgba(20,16,14,0.7), rgba(20,16,14,0.25)), url('assets/images/featured_brands/Shooting_star/shooting_star_1.jpg');">
+    <div class="container">
+      <div class="fin-breadcrumb">
+        <a href="index.html">Home</a><span class="sep">/</span>
+        <a href="projects.html">Work</a><span class="sep">/</span>
+        <span class="current">Shooting Star</span>
+      </div>
+      <div class="project-hero-type">Hospitality — Bar & Dining</div>
+      <h1>Shooting Star</h1>
+      <div class="project-hero-location">Jackson Hole, Wyoming</div>
+    </div>
+  </section>
+
+  <!-- PROJECT BODY -->
+  <section class="project-body">
+    <div class="container">
+      <div class="project-body-grid">
+        <div class="project-intro anim">
+        <p>The Shooting Star clubhouse centers on a custom hammered-copper bar and a warm, richly detailed dining area. We fabricated the bar, millwork, and dining fixtures that give the room its mountain-lodge luxury.</p>
+        <p>Leather seating, timber detailing, and layered lighting come together for an inviting, high-end hospitality environment.</p>
+        </div>
+        <aside class="project-meta anim">
+          <div class="project-meta-block"><h4>Location</h4><p>Jackson Hole, Wyoming</p></div>
+          <div class="project-meta-block"><h4>Type</h4><p>Hospitality — Bar & Dining</p></div>
+          <div class="project-meta-block"><h4>Scope of Work</h4><ul class="project-services"><li>Custom Copper Bar</li><li>Millwork</li><li>Dining Fixtures</li><li>Lighting</li></ul></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-gallery-section">
+    <div class="container">
+      <div class="project-gallery">
+        <figure class="project-gallery-item anim"><img src="assets/images/featured_brands/Shooting_star/shooting_star_2.jpg" alt="Shooting Star — view 1" loading="lazy"></figure>
+        <figure class="project-gallery-item anim"><img src="assets/images/featured_brands/Shooting_star/shooting_star_3.jpg" alt="Shooting Star — view 2" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT CTA -->
+  <section class="project-cta">
+    <div class="container">
+      <h2 class="section-title">Have a project in <span>mind?</span></h2>
+      <p>From concept to installation, we partner with you to create environments that stand out, perform, and scale.</p>
+      <div class="project-cta-actions">
+        <a href="index.html#contact" class="btn-primary">Start a Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></a>
+        <a href="projects.html" class="btn-outline">All Projects</a>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/niconat-logo-new.png" alt="NicoNat" style="height:40px;">
+          <div class="footer-brand-location">Los Angeles</div>
+          <p>We design, engineer, and manufacture retail environments that bring ideas to life &mdash; combining craftsmanship, technology, and precision.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="projects.html">Our Work</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="finishes.html">Finishes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-contact-item"><a href="mailto:info@niconat.co">info@niconat.co</a></div>
+          <div class="footer-contact-item"><a href="tel:+13237211900">(323) 721-1900</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>DESIGNED BY THE CLAY MEDIA &copy; 2026</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 30);
+    });
+    document.getElementById('mobileToggle').addEventListener('click', () => {
+      document.getElementById('nav').classList.toggle('active');
+    });
+    function checkAnim() {
+      const t = window.innerHeight * 0.92;
+      document.querySelectorAll('.anim:not(.visible)').forEach(el => {
+        if (el.getBoundingClientRect().top < t) el.classList.add('visible');
+      });
+    }
+    window.addEventListener('scroll', checkAnim, { passive: true });
+    window.addEventListener('load', checkAnim);
+    setTimeout(checkAnim, 200);
+  </script>
+</body>
+</html>
