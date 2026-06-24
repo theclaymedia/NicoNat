@@ -76,10 +76,11 @@ if ( NN_CF7_SAMPLES && function_exists( 'wpcf7' ) ) : ?>
         <div class="finish-group">
           <h4>Partnership Collection</h4>
           <label class="finish-opt"><input type="checkbox" value="Stone (NN-C01)"> <span class="finish-opt-name">Stone</span> <span class="finish-opt-code">NN-C01</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Glass &amp; Mirror (NN-C02)"> <span class="finish-opt-name">Glass &amp; Mirror</span> <span class="finish-opt-code">NN-C02</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Full Grain Leather (NN-C03)"> <span class="finish-opt-name">Full Grain Leather</span> <span class="finish-opt-code">NN-C03</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Integrated Lighting (NN-C04)"> <span class="finish-opt-name">Integrated Lighting</span> <span class="finish-opt-code">NN-C04</span></label>
-          <label class="finish-opt"><input type="checkbox" value="Acrylic (NN-C05)"> <span class="finish-opt-name">Acrylic</span> <span class="finish-opt-code">NN-C05</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Glass (NN-C02)"> <span class="finish-opt-name">Glass</span> <span class="finish-opt-code">NN-C02</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Mirror (NN-C03)"> <span class="finish-opt-name">Mirror</span> <span class="finish-opt-code">NN-C03</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Full Grain Leather (NN-C04)"> <span class="finish-opt-name">Full Grain Leather</span> <span class="finish-opt-code">NN-C04</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Integrated Lighting (NN-C05)"> <span class="finish-opt-name">Integrated Lighting</span> <span class="finish-opt-code">NN-C05</span></label>
+          <label class="finish-opt"><input type="checkbox" value="Acrylic (NN-C06)"> <span class="finish-opt-name">Acrylic</span> <span class="finish-opt-code">NN-C06</span></label>
         </div>
             </div>
             <input type="hidden" id="finishHidden" name="finishes">

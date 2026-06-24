@@ -291,53 +291,62 @@ get_header();
       <div class="fin-swatches-head anim">
         <div class="section-label">Partnership Collection</div>
         <h2 class="section-title">The <span>Partnership</span> Collection</h2>
-        <p>Premium materials we source from trusted partners &mdash; stone, glass &amp; mirror, leather, and integrated lighting &mdash; to craft beautiful, fully bespoke fixtures. Each links straight to the partner we work with.</p>
+        <p>Premium materials we source from trusted partners &mdash; stone, glass, mirror, leather, integrated lighting, and acrylic &mdash; to craft beautiful, fully bespoke fixtures. Each links straight to the partner who supplies it.</p>
       </div>
       <div class="swatch-grid">
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Stone"
                 data-name="Stone" data-code="NN-C01" data-category="Partnership"
-                data-desc="A curated range of natural stones including limestone, travertine, quartzite, and onyx — cut, finished, and detailed in-house to integrate seamlessly with millwork, metalwork, and bespoke interiors." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>" data-vendors="Cosentino|https://www.cosentino.com/|<?php echo nn_asset('assets/images/logos/Consentino_logo.png'); ?>;FENIX for Interiors|https://www.fenixforinteriors-na.com/|<?php echo nn_asset('assets/images/logos/Fenix_logo.png'); ?>">
+                data-desc="A curated range of natural stones including limestone, travertine, quartzite, and onyx — cut, finished, and detailed in-house to integrate seamlessly with millwork, metalwork, and bespoke interiors." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>" data-vendors="Gem International|https://gem-international.net/">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/stone.jpg'); ?>" alt="Stone" loading="lazy">
           </div>
           <figcaption class="swatch-meta"><h3 class="swatch-name">Stone</h3><span class="swatch-code">NN-C01</span></figcaption>
         </figure>
 
-        <figure class="swatch" tabindex="0" role="button" aria-label="View Glass &amp; Mirror"
-                data-name="Glass &amp; Mirror" data-code="NN-C02" data-category="Partnership"
-                data-desc="Specialty decorative glass including fluted, reeded, antique, and back-painted treatments — available in clear, tinted, and patterned formats for partitions, casework, and feature elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>" data-vendors="GlassPro|https://glas-pro.com/|<?php echo nn_asset('assets/images/logos/glaspro_logo.png'); ?>">
+        <figure class="swatch" tabindex="0" role="button" aria-label="View Glass"
+                data-name="Glass" data-code="NN-C02" data-category="Partnership"
+                data-desc="Specialty architectural glass &mdash; fluted, reeded, antiqued, back-painted, and patterned treatments in clear or tinted formats &mdash; for partitions, casework, and feature elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>" data-vendors="Pulp Studio|https://www.pulpstudio.com/">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/glass.jpg'); ?>" alt="Glass" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Glass &amp; Mirror</h3><span class="swatch-code">NN-C02</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Glass</h3><span class="swatch-code">NN-C02</span></figcaption>
+        </figure>
+
+        <figure class="swatch" tabindex="0" role="button" aria-label="View Mirror"
+                data-name="Mirror" data-code="NN-C03" data-category="Partnership"
+                data-desc="Decorative mirror in clear, smoked, bronze, and antiqued finishes &mdash; fabricated and installed to bring depth, light, and reflection into custom interiors and millwork." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/mirrors.jpg'); ?>" data-vendors="Glass Pro|https://glas-pro.com/|<?php echo nn_asset('assets/images/logos/glaspro_logo.png'); ?>">
+          <div class="swatch-img">
+            <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/mirrors.jpg'); ?>" alt="Mirror" loading="lazy">
+          </div>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Mirror</h3><span class="swatch-code">NN-C03</span></figcaption>
         </figure>
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Full Grain Leather"
-                data-name="Full Grain Leather" data-code="NN-C03" data-category="Partnership"
+                data-name="Full Grain Leather" data-code="NN-C04" data-category="Partnership"
                 data-desc="The highest grade of leather, retaining the hide's natural surface and character. Supple, exceptionally durable, and developing a richer patina over time — ideal for upholstery, panels, and bespoke detailing." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg'); ?>" data-vendors="Maharam|https://www.maharam.com/|<?php echo nn_asset('assets/images/logos/maharam_logo.png'); ?>;Jamie Stern|https://jamiesterndesign.com/|<?php echo nn_asset('assets/images/logos/Jamie_stern_logo.png'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/full_grain_leather.jpg'); ?>" alt="Full Grain Leather" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Full Grain Leather</h3><span class="swatch-code">NN-C03</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Full Grain Leather</h3><span class="swatch-code">NN-C04</span></figcaption>
         </figure>
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Integrated Lighting"
-                data-name="Integrated Lighting" data-code="NN-C04" data-category="Partnership"
+                data-name="Integrated Lighting" data-code="NN-C05" data-category="Partnership"
                 data-desc="Linear LED, edge-lit panels, and concealed task lighting built directly into millwork and architectural elements — engineered to highlight materials and accentuate form without visible hardware." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/integrated_lighting.jpg'); ?>" data-vendors="Hera Lighting|https://www.heralighting.com/|<?php echo nn_asset('assets/images/logos/Hera_logo.png'); ?>">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/integrated_lighting.jpg'); ?>" alt="Integrated Lighting" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Integrated Lighting</h3><span class="swatch-code">NN-C04</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Integrated Lighting</h3><span class="swatch-code">NN-C05</span></figcaption>
         </figure>
 
         <figure class="swatch" tabindex="0" role="button" aria-label="View Acrylic"
-                data-name="Acrylic" data-code="NN-C05" data-category="Partnership"
-                data-desc="Cast and machined acrylic in a wide range of clarities, colors, and surface textures — ideal for decorative panels, illuminated signage, sculptural lighting, and bespoke interior elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/acrylic.jpg'); ?>">
+                data-name="Acrylic" data-code="NN-C06" data-category="Partnership"
+                data-desc="Cast and machined acrylic in a wide range of clarities, colors, and surface textures — ideal for decorative panels, illuminated signage, sculptural lighting, and bespoke interior elements." data-img="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/acrylic.jpg'); ?>" data-vendors="Piedmont Plastics|https://www.piedmontplastics.com/;Materials Inc|https://materials-inc.com/">
           <div class="swatch-img">
             <img src="<?php echo nn_asset('assets/images/beautiful_finishes/custom_finishes/acrylic.jpg'); ?>" alt="Acrylic" loading="lazy">
           </div>
-          <figcaption class="swatch-meta"><h3 class="swatch-name">Acrylic</h3><span class="swatch-code">NN-C05</span></figcaption>
+          <figcaption class="swatch-meta"><h3 class="swatch-name">Acrylic</h3><span class="swatch-code">NN-C06</span></figcaption>
         </figure>
 
       </div>

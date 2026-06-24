@@ -122,6 +122,7 @@ setTimeout(checkAnim, 200);
       cat: s.dataset.category,
       desc: s.dataset.desc || '',
       img: s.dataset.img,
+      vendors: s.dataset.vendors || '',
     };
     img.src = current.img; img.alt = current.name;
     name.textContent = current.name;
@@ -153,6 +154,7 @@ setTimeout(checkAnim, 200);
       });
       vendorsWrap.hidden = false;
     } else { vendorsWrap.hidden = true; }
+    document.getElementById('modalReqLabel').textContent = current.vendors ? 'Contact Vendor for Samples' : 'Request a Sample';
     modal.classList.add('open');
     modal.setAttribute('aria-hidden','false');
     document.body.classList.add('modal-open');
@@ -175,6 +177,12 @@ setTimeout(checkAnim, 200);
     if (e.key === 'Escape' && modal.classList.contains('open')) dismiss();
   });
   req.addEventListener('click', () => {
+    if (current && current.vendors) {
+      const first = current.vendors.split(';')[0].split('|');
+      const url = (first[1] || '').trim();
+      if (url) window.open(url, '_blank', 'noopener');
+      return;
+    }
     if (current && window.__addFinish) window.__addFinish(current.name + ' (' + current.code + ')');
     dismiss();
     document.getElementById('request-samples').scrollIntoView({ behavior: 'smooth' });
